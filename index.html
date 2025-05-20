@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Page</title>
+    <title>Capsule-Inspired Gallery</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo" aria-label="Gallery Showcase">Gallery Showcase</div>
-        <nav aria-label="Main Navigation">
+        <div class="logo">Capsule Gallery</div>
+        <nav>
             <ul>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#about">About</a></li>
@@ -17,50 +17,53 @@
             </ul>
         </nav>
     </header>
-
     <main>
-        <section id="gallery" aria-labelledby="gallery-title">
-            <h1 id="gallery-title">Image Gallery</h1>
+        <section id="gallery">
+            <h1>Image Capsules</h1>
             <div class="gallery-container">
-                <figure class="gallery-item">
-                    <img src="image1.jpg" alt="Description of Image 1">
-                    <figcaption>Image 1</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <img src="image2.jpg" alt="Description of Image 2">
-                    <figcaption>Image 2</figcaption>
-                </figure>
-                <!-- Add more images as needed -->
+                <!-- Repeat this block for each image -->
+                <div class="capsule gallery-item">
+                    <img src="image1.jpg" alt="Artwork 1">
+                    <div class="capsule-content">
+                        <h2>Artwork 1</h2>
+                        <p>Short description of Artwork 1.</p>
+                    </div>
+                </div>
+                <div class="capsule gallery-item">
+                    <img src="image2.jpg" alt="Artwork 2">
+                    <div class="capsule-content">
+                        <h2>Artwork 2</h2>
+                        <p>Short description of Artwork 2.</p>
+                    </div>
+                </div>
+                <!-- More capsules... -->
             </div>
         </section>
-
-        <section id="about" aria-labelledby="about-title">
-            <h2 id="about-title">About Us</h2>
-            <p>Welcome to our gallery! Here you can explore a collection of beautiful art.</p>
+        <section id="about">
+            <h2>About</h2>
+            <p>Welcome to the Capsule Gallery, inspired by Moyra's Capsules! Enjoy exploring interactive artworks styled like capsules.</p>
         </section>
-
-        <section id="contact" aria-labelledby="contact-title">
-            <h2 id="contact-title">Contact Us</h2>
+        <section id="contact">
+            <h2>Contact</h2>
             <form autocomplete="on">
-                <label for="name">Your Name</label>
+                <label for="name">Name</label>
                 <input id="name" name="name" type="text" placeholder="Your Name" required>
-                <label for="email">Your Email</label>
+                <label for="email">Email</label>
                 <input id="email" name="email" type="email" placeholder="Your Email" required>
-                <label for="message">Your Message</label>
+                <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2025 Gallery Showcase. All rights reserved.</p>
-        <nav class="social-media" aria-label="Social Media">
-            <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="#" aria-label="Instagram">Instagram</a>
-        </nav>
+        <p>&copy; 2025 Capsule Gallery. All rights reserved.</p>
     </footer>
-
+    <div id="lightbox" class="lightbox hidden">
+        <span class="close">&times;</span>
+        <img src="" alt="Expanded Capsule">
+        <div class="caption"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
