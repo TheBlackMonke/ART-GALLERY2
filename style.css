@@ -41,6 +41,7 @@ main {
     height: auto;
     border-radius: 8px;
     transition: transform 0.2s;
+    cursor: pointer;
 }
 
 .gallery-item img:hover {
@@ -90,4 +91,3 @@ footer {
     font-size: 30px;
     cursor: pointer;
 }
-
