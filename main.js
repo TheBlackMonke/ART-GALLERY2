@@ -9,5 +9,12 @@ document.querySelectorAll('.gallery-item img').forEach(image => {
         lightbox.querySelector('.close').addEventListener('click', () => {
             document.body.removeChild(lightbox);
         });
+
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                document.body.removeChild(lightbox);
+            }
+        });
     });
 });
