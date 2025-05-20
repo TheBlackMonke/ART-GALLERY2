@@ -1,99 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Art Capsules Gallery</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700,900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <div class="art-background">
-    <svg class="art-svg" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-          <stop stop-color="#f6e58d"/>
-          <stop offset="1" stop-color="#a29bfe"/>
-        </linearGradient>
-        <radialGradient id="g2" cx="0.7" cy="0.4" r="1">
-          <stop stop-color="#fdcbf1" stop-opacity="0.8"/>
-          <stop offset="1" stop-color="#dff9fb" stop-opacity="0.6"/>
-        </radialGradient>
-      </defs>
-      <ellipse cx="500" cy="300" rx="500" ry="260" fill="url(#g1)" opacity="0.5"/>
-      <ellipse cx="1500" cy="700" rx="450" ry="200" fill="url(#g2)" opacity="0.7"/>
-      <ellipse cx="1400" cy="200" rx="320" ry="120" fill="#81ecec" opacity="0.11"/>
-      <ellipse cx="600" cy="900" rx="300" ry="100" fill="#fdcbf1" opacity="0.07"/>
-    </svg>
-  </div>
+  <canvas id="art-bg"></canvas>
   <header>
-    <div class="logo">🎨 Art Capsules</div>
-    <nav>
-      <ul>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <div class="logo">🎨 Art Capsules</div>
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
   <main>
+    <section class="hero">
+      <h1>Art Capsules Gallery</h1>
+      <p>Discover, filter, and enjoy a curated art experience in a unique capsule design inspired by contemporary art and color.</p>
+    </section>
     <section id="gallery">
-      <h1>Explore the Capsules</h1>
-      <div class="filters">
-        <input type="text" id="searchInput" placeholder="🔍 Search art, tags, or captions..." aria-label="Search art" />
-        <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="nature">Nature</button>
-        <button class="filter-btn" data-category="urban">Urban</button>
-        <button class="filter-btn" data-category="abstract">Abstract</button>
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="painting">Painting</button>
+        <button class="filter-btn" data-filter="photography">Photography</button>
+        <button class="filter-btn" data-filter="digital">Digital</button>
+        <button class="filter-btn" data-filter="abstract">Abstract</button>
       </div>
-      <div class="gallery-container">
-        <div class="capsule gallery-item" data-category="nature">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Forest Path">
+      <div class="capsule-grid">
+        <div class="capsule" data-category="painting">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Pastel Landscape"/>
           <div class="capsule-content">
-            <h2>Forest Path</h2>
-            <p>A tranquil path through a lush green forest.</p>
-            <div class="tags"><span>Nature</span><span>Calm</span></div>
+            <h2>Pastel Landscape</h2>
+            <span class="capsule-tag">Painting</span>
           </div>
         </div>
-        <div class="capsule gallery-item" data-category="nature">
-          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Mountain Lake">
+        <div class="capsule" data-category="photography">
+          <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=600&q=80" alt="Urban Reflection"/>
           <div class="capsule-content">
-            <h2>Mountain Lake</h2>
-            <p>A serene lake surrounded by mountains at sunrise.</p>
-            <div class="tags"><span>Nature</span><span>Water</span></div>
+            <h2>Urban Reflection</h2>
+            <span class="capsule-tag">Photography</span>
           </div>
         </div>
-        <div class="capsule gallery-item" data-category="urban">
-          <img src="https://images.unsplash.com/photo-1468599590671-25d2b1b14904?auto=format&fit=crop&w=600&q=80" alt="City Cliffs">
+        <div class="capsule" data-category="digital">
+          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=600&q=80" alt="Synthwave Dream"/>
           <div class="capsule-content">
-            <h2>City Cliffs</h2>
-            <p>Majestic cliffs overlooking a vibrant cityscape.</p>
-            <div class="tags"><span>Urban</span><span>City</span></div>
+            <h2>Synthwave Dream</h2>
+            <span class="capsule-tag">Digital</span>
           </div>
         </div>
-        <div class="capsule gallery-item" data-category="urban">
-          <img src="https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=600&q=80" alt="Urban Neon">
+        <div class="capsule" data-category="abstract">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Color Flow"/>
           <div class="capsule-content">
-            <h2>Urban Neon</h2>
-            <p>Neon signs lighting up the night in a bustling city.</p>
-            <div class="tags"><span>Urban</span><span>Neon</span></div>
+            <h2>Color Flow</h2>
+            <span class="capsule-tag">Abstract</span>
           </div>
         </div>
-        <div class="capsule gallery-item" data-category="abstract">
-          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Abstract Colors">
+        <div class="capsule" data-category="painting">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Seaside Canvas"/>
           <div class="capsule-content">
-            <h2>Abstract Colors</h2>
-            <p>Vivid colors blending in an abstract harmony.</p>
-            <div class="tags"><span>Abstract</span><span>Colorful</span></div>
+            <h2>Seaside Canvas</h2>
+            <span class="capsule-tag">Painting</span>
           </div>
         </div>
-        <div class="capsule gallery-item" data-category="abstract">
-          <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3c5c?auto=format&fit=crop&w=600&q=80" alt="Colorful Waves">
+        <div class="capsule" data-category="digital">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Geometric Pulse"/>
           <div class="capsule-content">
-            <h2>Colorful Waves</h2>
-            <p>Waves of color and light in a digital abstraction.</p>
-            <div class="tags"><span>Abstract</span><span>Waves</span></div>
+            <h2>Geometric Pulse</h2>
+            <span class="capsule-tag">Digital</span>
+          </div>
+        </div>
+        <div class="capsule" data-category="photography">
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Golden Hour"/>
+          <div class="capsule-content">
+            <h2>Golden Hour</h2>
+            <span class="capsule-tag">Photography</span>
+          </div>
+        </div>
+        <div class="capsule" data-category="abstract">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Splatter"/>
+          <div class="capsule-content">
+            <h2>Splatter</h2>
+            <span class="capsule-tag">Abstract</span>
           </div>
         </div>
       </div>
@@ -101,43 +94,10 @@
     <section id="about">
       <h2>About</h2>
       <p>
-        Welcome to <b>Art Capsules</b> – a curated gallery where art, nature, and urban beauty blend with contemporary design.<br>
-        Filter by theme, search, enjoy entry/hover animations, and click any capsule to view it in detail.<br>
-        Inspired by the wonder of creativity!
+        <b>Art Capsules</b> brings you a gallery of curated artwork from different disciplines, presented in a playful and interactive capsule format.  
+        Every capsule is a peek into a world of imagination, color, and emotion—click any artwork to view it in a stunning fullscreen lightbox.<br>
+        Designed for art lovers, creators, and the curious.
       </p>
-      <div class="team">
-        <div class="team-member">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Artist">
-          <div>
-            <strong>Alex Artist</strong><br>
-            Founder & Curator
-          </div>
-        </div>
-        <div class="team-member">
-          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Maya Designer">
-          <div>
-            <strong>Maya Designer</strong><br>
-            Visual Director
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="faq">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">How do I submit my art?</button>
-          <div class="faq-answer">Contact us using the form below with a link to your portfolio or sample works!</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Is this gallery open source?</button>
-          <div class="faq-answer">Yes, you can fork and use this art capsules gallery for your own projects.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Can I suggest new features?</button>
-          <div class="faq-answer">Absolutely! Use the contact form or open an issue in our GitHub repository.</div>
-        </div>
-      </div>
     </section>
     <section id="contact">
       <h2>Contact</h2>
@@ -153,12 +113,12 @@
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Art Capsules. All rights reserved. | <a href="https://github.com/TheBlackMonke/ART-GALLERY2" target="_blank" rel="noopener">GitHub</a></p>
+    <p>&copy; 2025 Art Capsules. All rights reserved.</p>
   </footer>
   <div id="lightbox" class="lightbox hidden">
     <span class="close">&times;</span>
-    <img src="" alt="Expanded Capsule">
-    <div class="caption"></div>
+    <img src="" alt="Expanded Capsule"/>
+    <h2 class="lightbox-title"></h2>
   </div>
   <script src="script.js"></script>
 </body>
