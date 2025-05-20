@@ -10,30 +10,21 @@ body {
   position: relative;
 }
 
-/* Artistic SVG/Gradient Background */
 .art-background {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at 20% 40%, #ffeaa7 0%, #f1f2f6 40%, #dff9fb 100%);
+  width: 100vw; height: 100vh;
+  overflow: hidden;
 }
-.art-background::before, .art-background::after {
-  content: "";
+.art-svg {
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.55;
-}
-.art-background::before {
-  width: 500px; height: 500px;
-  top: -120px; left: -130px;
-  background: linear-gradient(135deg, #a29bfe 10%, #00b894 90%);
-}
-.art-background::after {
-  width: 600px; height: 400px;
-  bottom: -120px; right: -160px;
-  background: linear-gradient(130deg, #fdcbf1 10%, #0984e3 90%);
+  left: 0; top: 0;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 header {
@@ -109,6 +100,24 @@ h1, h2 {
   justify-content: center;
   gap: 1.2em;
   margin-bottom: 2.2em;
+  flex-wrap: wrap;
+}
+#searchInput {
+  flex: 1 0 220px;
+  max-width: 260px;
+  border-radius: 22px;
+  border: 1.5px solid #a29bfe;
+  padding: 0.6em 1.4em;
+  margin-right: 1.5em;
+  font-size: 1em;
+  font-family: inherit;
+  background: #faf9f6;
+  box-shadow: 0 1.5px 8px rgba(160,155,254,0.08);
+  outline: none;
+  transition: border 0.23s;
+}
+#searchInput:focus {
+  border-color: #00b894;
 }
 .filter-btn {
   background: linear-gradient(95deg, #a29bfe 0%, #fdcbf1 100%);
@@ -201,6 +210,22 @@ h1, h2 {
   flex-direction: column;
   justify-content: flex-end;
 }
+.capsule-content .tags {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  margin-top: 0.8em;
+  flex-wrap: wrap;
+}
+.capsule-content .tags span {
+  background: #a29bfe22;
+  color: #6c5ce7;
+  border-radius: 12px;
+  padding: 0.22em 0.8em;
+  font-size: 0.93em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
 
 .capsule-content h2 {
   font-size: 1.25rem;
@@ -220,6 +245,87 @@ section {
   margin: 54px 0;
 }
 
+/* Team Section */
+.team {
+  margin-top: 2.5em;
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.team-member {
+  background: #fafaffdd;
+  border-radius: 18px;
+  box-shadow: 0 2px 10px #a29bfe22;
+  padding: 1.5em 1.6em 1em 1.6em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  max-width: 230px;
+}
+.team-member img {
+  width: 70px; height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.8em;
+  border: 3px solid #a29bfe;
+}
+
+/* FAQ Section */
+.faq-list {
+  margin-top: 2em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.faq-item {
+  margin-bottom: 1.2em;
+  border-radius: 15px;
+  background: #f6e58d11;
+  box-shadow: 0 1.5px 8px #fdcbf122;
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1.08em;
+  font-weight: 700;
+  color: #6c5ce7;
+  padding: 1.2em 1.4em;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.faq-question:after {
+  content: "▼";
+  float: right;
+  font-size: 1em;
+  color: #a29bfe;
+  transition: transform 0.2s;
+}
+.faq-question.active:after {
+  content: "▲";
+  color: #00b894;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff9;
+  font-size: 1em;
+  color: #30336b;
+  padding: 0 1.4em;
+  transition: max-height 0.28s cubic-bezier(0.4,0.6,0.2,1), padding 0.23s;
+  border-top: 1px solid #a29bfe33;
+}
+.faq-answer.open {
+  max-height: 200px;
+  padding: 1em 1.4em;
+}
+
+/* Contact */
 form {
   background: #fff;
   border-radius: 24px;
@@ -267,6 +373,11 @@ footer {
   color: #636e72;
   font-size: 0.97rem;
   border-top: 1px solid #dfe6e9;
+}
+footer a {
+  color: #6c5ce7;
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 /* Lightbox styles */
@@ -332,5 +443,15 @@ footer {
   }
   header {
     padding-bottom: 6px;
+  }
+  .filters {
+    flex-direction: column;
+    gap: 1em;
+    align-items: stretch;
+  }
+  #searchInput {
+    margin-right: 0;
+    margin-bottom: 0.8em;
+    max-width: 100%;
   }
 }
