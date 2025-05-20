@@ -1,3 +1,4 @@
+// Lightbox effect for capsule images
 document.querySelectorAll('.gallery-item img').forEach(image => {
     image.addEventListener('click', () => {
         const lightbox = document.getElementById('lightbox');
