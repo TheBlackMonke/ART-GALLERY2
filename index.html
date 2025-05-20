@@ -8,14 +8,32 @@
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600,800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="art-background"></div>
+  <div class="art-background">
+    <svg class="art-svg" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop stop-color="#f6e58d"/>
+          <stop offset="1" stop-color="#a29bfe"/>
+        </linearGradient>
+        <radialGradient id="g2" cx="0.7" cy="0.4" r="1">
+          <stop stop-color="#fdcbf1" stop-opacity="0.8"/>
+          <stop offset="1" stop-color="#dff9fb" stop-opacity="0.6"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="500" cy="300" rx="500" ry="260" fill="url(#g1)" opacity="0.5"/>
+      <ellipse cx="1500" cy="700" rx="450" ry="200" fill="url(#g2)" opacity="0.7"/>
+      <ellipse cx="1400" cy="200" rx="320" ry="120" fill="#81ecec" opacity="0.11"/>
+      <ellipse cx="600" cy="900" rx="300" ry="100" fill="#fdcbf1" opacity="0.07"/>
+    </svg>
+  </div>
   <header>
-    <div class="logo">Art Capsules</div>
+    <div class="logo">🎨 Art Capsules</div>
     <nav>
       <ul>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
   </header>
@@ -23,6 +41,7 @@
     <section id="gallery">
       <h1>Explore the Capsules</h1>
       <div class="filters">
+        <input type="text" id="searchInput" placeholder="🔍 Search art, tags, or captions..." aria-label="Search art" />
         <button class="filter-btn active" data-category="all">All</button>
         <button class="filter-btn" data-category="nature">Nature</button>
         <button class="filter-btn" data-category="urban">Urban</button>
@@ -34,6 +53,7 @@
           <div class="capsule-content">
             <h2>Forest Path</h2>
             <p>A tranquil path through a lush green forest.</p>
+            <div class="tags"><span>Nature</span><span>Calm</span></div>
           </div>
         </div>
         <div class="capsule gallery-item" data-category="nature">
@@ -41,6 +61,7 @@
           <div class="capsule-content">
             <h2>Mountain Lake</h2>
             <p>A serene lake surrounded by mountains at sunrise.</p>
+            <div class="tags"><span>Nature</span><span>Water</span></div>
           </div>
         </div>
         <div class="capsule gallery-item" data-category="urban">
@@ -48,6 +69,7 @@
           <div class="capsule-content">
             <h2>City Cliffs</h2>
             <p>Majestic cliffs overlooking a vibrant cityscape.</p>
+            <div class="tags"><span>Urban</span><span>City</span></div>
           </div>
         </div>
         <div class="capsule gallery-item" data-category="urban">
@@ -55,6 +77,7 @@
           <div class="capsule-content">
             <h2>Urban Neon</h2>
             <p>Neon signs lighting up the night in a bustling city.</p>
+            <div class="tags"><span>Urban</span><span>Neon</span></div>
           </div>
         </div>
         <div class="capsule gallery-item" data-category="abstract">
@@ -62,6 +85,7 @@
           <div class="capsule-content">
             <h2>Abstract Colors</h2>
             <p>Vivid colors blending in an abstract harmony.</p>
+            <div class="tags"><span>Abstract</span><span>Colorful</span></div>
           </div>
         </div>
         <div class="capsule gallery-item" data-category="abstract">
@@ -69,13 +93,51 @@
           <div class="capsule-content">
             <h2>Colorful Waves</h2>
             <p>Waves of color and light in a digital abstraction.</p>
+            <div class="tags"><span>Abstract</span><span>Waves</span></div>
           </div>
         </div>
       </div>
     </section>
     <section id="about">
       <h2>About</h2>
-      <p>Welcome to Art Capsules – a curated gallery where art, nature, and urban beauty blend with contemporary design. Filter by theme, enjoy animations, and click any capsule to view it in detail. Inspired by the wonder of creativity!</p>
+      <p>
+        Welcome to <b>Art Capsules</b> – a curated gallery where art, nature, and urban beauty blend with contemporary design.<br>
+        Filter by theme, search, enjoy entry/hover animations, and click any capsule to view it in detail.<br>
+        Inspired by the wonder of creativity!
+      </p>
+      <div class="team">
+        <div class="team-member">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Artist">
+          <div>
+            <strong>Alex Artist</strong><br>
+            Founder & Curator
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Maya Designer">
+          <div>
+            <strong>Maya Designer</strong><br>
+            Visual Director
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">How do I submit my art?</button>
+          <div class="faq-answer">Contact us using the form below with a link to your portfolio or sample works!</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is this gallery open source?</button>
+          <div class="faq-answer">Yes, you can fork and use this art capsules gallery for your own projects.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I suggest new features?</button>
+          <div class="faq-answer">Absolutely! Use the contact form or open an issue in our GitHub repository.</div>
+        </div>
+      </div>
     </section>
     <section id="contact">
       <h2>Contact</h2>
@@ -91,7 +153,7 @@
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Art Capsules. All rights reserved.</p>
+    <p>&copy; 2025 Art Capsules. All rights reserved. | <a href="https://github.com/TheBlackMonke/ART-GALLERY2" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
   <div id="lightbox" class="lightbox hidden">
     <span class="close">&times;</span>
