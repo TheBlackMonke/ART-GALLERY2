@@ -1,20 +1,20 @@
 document.querySelectorAll('.gallery-item img').forEach(image => {
     image.addEventListener('click', () => {
-        const src = image.src;
-        const lightbox = document.createElement('div');
-        lightbox.classList.add('lightbox');
-        lightbox.innerHTML = `<img src="${src}" alt="Lightbox Image"><span class="close">&times;</span>`;
-        document.body.appendChild(lightbox);
-
-        lightbox.querySelector('.close').addEventListener('click', () => {
-            document.body.removeChild(lightbox);
-        });
-
-        // Close lightbox when clicking outside the image
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                document.body.removeChild(lightbox);
-            }
-        });
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const caption = lightbox.querySelector('.caption');
+        lightboxImg.src = image.src;
+        caption.textContent = image.closest('.capsule').querySelector('h2').textContent;
+        lightbox.classList.remove('hidden');
     });
+});
+
+document.querySelector('.lightbox .close').addEventListener('click', () => {
+    document.getElementById('lightbox').classList.add('hidden');
+});
+
+document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+        e.currentTarget.classList.add('hidden');
+    }
 });
