@@ -19,3 +19,23 @@ document.getElementById('lightbox').addEventListener('click', (e) => {
     e.currentTarget.classList.add('hidden');
   }
 });
+
+// Filtering functionality
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const category = this.getAttribute('data-category');
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      if (category === 'all' || item.getAttribute('data-category') === category) {
+        item.style.display = "flex";
+        item.style.pointerEvents = "";
+        setTimeout(()=>{item.style.opacity = "";}, 10);
+      } else {
+        item.style.opacity = "0";
+        item.style.pointerEvents = "none";
+        setTimeout(()=>{item.style.display = "none";}, 220);
+      }
+    });
+  });
+});
