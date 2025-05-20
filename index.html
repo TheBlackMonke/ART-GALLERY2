@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capsule Art Gallery</title>
+  <title>Art Capsules Gallery</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600,800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="art-background"></div>
   <header>
-    <div class="logo">Capsule Gallery</div>
+    <div class="logo">Art Capsules</div>
     <nav>
       <ul>
         <li><a href="#gallery">Gallery</a></li>
@@ -20,55 +21,61 @@
   </header>
   <main>
     <section id="gallery">
-      <h1>Discover the Capsules</h1>
+      <h1>Explore the Capsules</h1>
+      <div class="filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="nature">Nature</button>
+        <button class="filter-btn" data-category="urban">Urban</button>
+        <button class="filter-btn" data-category="abstract">Abstract</button>
+      </div>
       <div class="gallery-container">
-        <div class="capsule gallery-item">
+        <div class="capsule gallery-item" data-category="nature">
           <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Forest Path">
           <div class="capsule-content">
             <h2>Forest Path</h2>
             <p>A tranquil path through a lush green forest.</p>
           </div>
         </div>
-        <div class="capsule gallery-item">
+        <div class="capsule gallery-item" data-category="nature">
           <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Mountain Lake">
           <div class="capsule-content">
             <h2>Mountain Lake</h2>
             <p>A serene lake surrounded by mountains at sunrise.</p>
           </div>
         </div>
-        <div class="capsule gallery-item">
-          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Desert Dunes">
+        <div class="capsule gallery-item" data-category="urban">
+          <img src="https://images.unsplash.com/photo-1468599590671-25d2b1b14904?auto=format&fit=crop&w=600&q=80" alt="City Cliffs">
           <div class="capsule-content">
-            <h2>Desert Dunes</h2>
-            <p>Waves of sand under a vast blue sky.</p>
+            <h2>City Cliffs</h2>
+            <p>Majestic cliffs overlooking a vibrant cityscape.</p>
           </div>
         </div>
-        <div class="capsule gallery-item">
-          <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=600&q=80" alt="Autumn Trees">
+        <div class="capsule gallery-item" data-category="urban">
+          <img src="https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=600&q=80" alt="Urban Neon">
           <div class="capsule-content">
-            <h2>Autumn Trees</h2>
-            <p>Golden leaves in a peaceful autumn forest.</p>
+            <h2>Urban Neon</h2>
+            <p>Neon signs lighting up the night in a bustling city.</p>
           </div>
         </div>
-        <div class="capsule gallery-item">
-          <img src="https://images.unsplash.com/photo-1468599590671-25d2b1b14904?auto=format&fit=crop&w=600&q=80" alt="Ocean Cliffs">
+        <div class="capsule gallery-item" data-category="abstract">
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Abstract Colors">
           <div class="capsule-content">
-            <h2>Ocean Cliffs</h2>
-            <p>Majestic cliffs overlooking an endless ocean.</p>
+            <h2>Abstract Colors</h2>
+            <p>Vivid colors blending in an abstract harmony.</p>
           </div>
         </div>
-        <div class="capsule gallery-item">
-          <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=600&q=80" alt="Snowy Mountains">
+        <div class="capsule gallery-item" data-category="abstract">
+          <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3c5c?auto=format&fit=crop&w=600&q=80" alt="Colorful Waves">
           <div class="capsule-content">
-            <h2>Snowy Mountains</h2>
-            <p>Snow-capped peaks under a crisp blue sky.</p>
+            <h2>Colorful Waves</h2>
+            <p>Waves of color and light in a digital abstraction.</p>
           </div>
         </div>
       </div>
     </section>
     <section id="about">
       <h2>About</h2>
-      <p>This gallery is inspired by the capsule design concept. Click on any image capsule to view it in a beautiful lightbox. Enjoy browsing through stunning scenery from around the globe!</p>
+      <p>Welcome to Art Capsules – a curated gallery where art, nature, and urban beauty blend with contemporary design. Filter by theme, enjoy animations, and click any capsule to view it in detail. Inspired by the wonder of creativity!</p>
     </section>
     <section id="contact">
       <h2>Contact</h2>
@@ -84,7 +91,7 @@
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Capsule Gallery. All rights reserved.</p>
+    <p>&copy; 2025 Art Capsules. All rights reserved.</p>
   </footer>
   <div id="lightbox" class="lightbox hidden">
     <span class="close">&times;</span>
