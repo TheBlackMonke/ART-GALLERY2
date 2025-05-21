@@ -1,125 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Art Capsules Gallery</title>
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,700,900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+background-image: url("")
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: white;
+background-image: url("1.jpg");
+color: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+background-image: url("")
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+background-image: url("")
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+background-image: url("")
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+background-image: url("https://img.freepik.com/free-photo/background_53876-32173.jpg")
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+
+
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+S  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("10.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("7.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("12.jpg");
+  min-height: 400px;
+}
+
+
+
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+
+
+
+
+
+
+
+</style>
 </head>
 <body>
-  <canvas id="art-bg"></canvas>
-  <header>
-    <div class="header-inner">
-      <div class="logo">🎨 Art Capsules</div>
-      <nav>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section class="hero">
-      <h1>Art Capsules Gallery</h1>
-      <p>Discover, filter, and enjoy a curated art experience in a unique capsule design inspired by contemporary art and color.</p>
-    </section>
-    <section id="gallery">
-      <div class="gallery-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="painting">Painting</button>
-        <button class="filter-btn" data-filter="photography">Photography</button>
-        <button class="filter-btn" data-filter="digital">Digital</button>
-        <button class="filter-btn" data-filter="abstract">Abstract</button>
-      </div>
-      <div class="capsule-grid">
-        <div class="capsule" data-category="painting">
-          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Pastel Landscape"/>
-          <div class="capsule-content">
-            <h2>Pastel Landscape</h2>
-            <span class="capsule-tag">Painting</span>
-          </div>
-        </div>
-        <div class="capsule" data-category="photography">
-          <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=600&q=80" alt="Urban Reflection"/>
-          <div class="capsule-content">
-            <h2>Urban Reflection</h2>
-            <span class="capsule-tag">Photography</span>
-          </div>
-        </div>
-        <div class="capsule" data-category="digital">
-          <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=600&q=80" alt="Synthwave Dream"/>
-          <div class="capsule-content">
-            <h2>Synthwave Dream</h2>
-            <span class="capsule-tag">Digital</span>
-          </div>
-        </div>
-        <div class="capsule" data-category="abstract">
-          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Color Flow"/>
-          <div class="capsule-content">
-            <h2>Color Flow</h2>
-            <span class="capsule-tag">Abstract</span>
-          </div>
-        </div>
-        <div class="capsule" data-category="painting">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Seaside Canvas"/>
-          <div class="capsule-content">
-            <h2>Seaside Canvas</h2>
-            <span class="capsule-tag">Painting</span>
-          </div>
-        </div>
-        <div class="capsule" data-category="digital">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Geometric Pulse"/>
-          <div class="capsule-content">
-            <h2>Geometric Pulse</h2>
-            <span class="capsule-tag">Digital</span>
-          </div>
-        </div>
-        <div class="capsule" data-category="photography">
-          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Golden Hour"/>
-          <div class="capsule-content">
-            <h2>Golden Hour</h2>
-            <span class="capsule-tag">Photography</span>
-          </div>
-        </div>
-        <div class="capsule" data-category="abstract">
-          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Splatter"/>
-          <div class="capsule-content">
-            <h2>Splatter</h2>
-            <span class="capsule-tag">Abstract</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        <b>Art Capsules</b> brings you a gallery of curated artwork from different disciplines, presented in a playful and interactive capsule format.  
-        Every capsule is a peek into a world of imagination, color, and emotion—click any artwork to view it in a stunning fullscreen lightbox.<br>
-        Designed for art lovers, creators, and the curious.
-      </p>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <form autocomplete="on" action="https://formspree.io/f/mnqedqyg" method="POST">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Your Name" required>
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="Your Email" required>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Art Capsules. All rights reserved.</p>
-  </footer>
-  <div id="lightbox" class="lightbox hidden">
-    <span class="close">&times;</span>
-    <img src="" alt="Expanded Capsule"/>
-    <h2 class="lightbox-title"></h2>
+
+<div class="header">
+  <h1><strong>ADJ’S PLACE</strong></h1>
+  <p> </p>
+</div>
+
+
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/Home.html">HOME</a>
+    <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/OUR%20STORY.html">OUR STORY</a>
+    <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/FEATURES.html">FEATURES</a>
+    <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/LOCATION.html">LOCATION</a>
+	<a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/CAREERS.html">CAREERS</a>
+	<a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/CONTACT%20US.html">CONTACT US</a>
+	<a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/FAQ.html">FAQ</a>
   </div>
-  <script src="script.js"></script>
+</div>
+
+<
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+
+
+<body>
+
+<div class="bgimg-1">
+  <div class="caption">
+  <span class="border">ABOUT ADJ'S PLACE</span>
+  </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+  <h3 style="text-align:center;">Our story</h3>
+  <p>Adj's Place is a brand-new staycation in Imus, Cavite, famous for tourist attractions and events. It is a location that combines both historical importance and economic advancement.</p>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption">
+  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">CONTINUE</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+  <p>The owner Adjie, purchased the property in 2016; however, he chose not to live there since he preferred the city. Instead, he used it as a sleeping investment for years until he recognized that it was better to utilize the property, implemented automation, and began offering it to the public as an Air BnB. His credo is that if you have nothing to do, why not start a business?</p>
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption">
+  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">KEEP SCROLLING DOWN</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+  <p>Having a safe stay here is an excellent alternative for tourists seeking a superb holiday location in Cavite's capital city. Every time customers stay at our budget-friendly lodging, they have a delightful and secure vacation. Security measures are in place, and Amazon Alexa is installed, enabling voice commands to manage all of the equipment, including all air conditioners, TVs, washers, etc., and turning on the lights. Even the cooker and rice cooker respond to voice commands.</p>
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+  <span class="border">HAVE A RELAXING VACATION!</span>
+  </div>
+</div>
+
+
+</body>
+
+
+
+      
+    </div>
+    
+  </div>
+
+
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-dark-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>ADJ'S PLACE</h3>
+      <p>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</p>
+    </div>
+  
+    <div class="w3-third">
+      <h3>Contact Us</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="https://www.theriver.asia/wp-content/uploads/2020/01/pngkey.com-airbnb-logo-png-605967.png" class="w3-left w3-margin-right" style="width:40px">  <a href="https://www.airbnb.ca/rooms/779311783767893211?source_impression_id=p3_1683864104_yA8RetMnvndjAvEM&fbclid=IwAR0zu6-bvC6Vo03UJhk92EFPplWMLtTpe5-8C3aCJLwkXaFqcnKloKZRIIU">
+          <span class="w3-large">AIRBNB 	</span><br>
+        </li>
+        <li class="w3-padding-16">
+          <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" class="w3-left w3-margin-right" style="width:60px"> <a href="https://www.facebook.com/profile.php?id=100089027074305&_rdc=1&_rdr">
+          <span class="w3-large">FACEBOOK</span><br>
+
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-third">
+      <h3>QUICK LINKS</h3>
+      <p>
+   <li> <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/Home.html">HOME</a> </li>
+    <li> <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/OUR%20STORY.html">OUR STORY</a> </li>
+    <li> <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/FEATURES.html">FEATURES</a> </li>
+    <li> <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/LOCATION.html">LOCATION</a> </li>
+	<li> <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/CAREERS.html">CAREERS</a> </li>
+	<li> <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/CONTACT%20US.html">CONTACT US</a> </li>
+	<li> <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVA%20PROJECT/FAQ.html">FAQ</a> </li>
+    </div>
+
+  </div>
+  </footer>
+  <div class="w3-black w3-center w3-padding-24">@ADJ'S PLACE 2023</a></div>
+
 </body>
 </html>
+
+
