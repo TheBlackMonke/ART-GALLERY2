@@ -1,624 +1,415 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+<title>𝓙𝓪𝔃𝓲'𝓼 𝓐𝓻𝓽𝔀𝓸𝓻𝓴𝓼 - Portfolio</title>
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Lato:300,400,700|Montserrat:400,700&display=swap" rel="stylesheet">
 <style>
-* {
-  box-sizing: border-box;
+:root {
+  --gold: #FFD700;
+  --dark: #1b1b1b;
+  --accent: #edbb99;
+  --card-bg: rgba(30,30,30,0.85);
+  --modal-bg: rgba(0,0,0,0.92);
 }
+
+* { box-sizing: border-box; }
 
 body {
-  font-family: Arial;
+  font-family: 'Lato', Arial, sans-serif;
+  background: #f1f1f1 url("img%20a/bg%202.jpg") no-repeat center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
   padding: 10px;
-  background: #f1f1f1;
-background-image: url("img%20a/bg 2.jpg");
+  color: #222;
 }
 
-/* Header/Blog Title */
 .header {
-  padding: 30px;
+  padding: 36px 0 20px 0;
   text-align: center;
-  background: Gold;
+  background: linear-gradient(90deg, var(--gold), #fffbe6 40%, #fff9e6 60%, var(--gold));
+  border-radius: 15px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.11);
+  margin-bottom: 30px;
 }
 
 .header h1 {
-  font-size: 50px;
+  font-size: 3.2rem;
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 2px;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
 }
 
-/* Style the top navigation bar */
+.header p {
+  font-size: 1.4rem;
+  color: #444;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #222;
+  border-radius: 7px;
+  margin: 0 0 18px 0;
 }
 
-/* Style the topnav links */
 .topnav a {
   float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 15px 20px;
   text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
 }
 
-/* Change color on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: var(--gold);
+  color: var(--dark);
 }
 
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
+.leftcolumn {
   width: 100%;
 }
 
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 0%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 28px;
+  margin: 28px auto 0 auto;
+  justify-items: center;
 }
 
-/* Fake image */
-.fakeimg {
-  background-color: #aaa;
+.art-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+  padding: 18px 18px 12px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s;
+  margin-bottom: 0;
+  max-width: 330px;
+}
+
+.art-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.art-card img {
+  border-radius: 16px;
   width: 100%;
-  padding: 20px;
+  max-width: 260px;
+  height: 230px;
+  object-fit: cover;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  cursor: pointer;
+  margin-bottom: 11px;
+  border: 2.5px solid var(--gold);
+  background: #f7f7f7;
+  transition: opacity 0.25s, box-shadow 0.25s;
 }
 
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-  color: white;
-background-image: url("https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltf930a7a2b83fff60/5e17887df980a27e5b76ac2f/teamfighttactics.jpg");
+.art-card img:hover {opacity: 0.84; box-shadow: 0 4px 32px var(--gold);}
 
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
+.art-card .caption {
+  color: #f2e7c9;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
   text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-color: gold;
-background-color: DimGrey;
+  margin: 0;
+  padding: 0;
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: var(--modal-bg);
+  animation: fadeIn 0.25s;
 }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .topnav a {
-    float: none;
-    width: 100%;
-  }
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
 }
 
-
-body {
-  font-family: "Lato", sans-serif;
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 85%;
+  max-width: 800px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(255,215,0,0.12);
+  animation: zoom 0.4s;
 }
 
+@keyframes zoom {
+  from {transform:scale(0.7);}
+  to {transform:scale(1);}
+}
+
+.modal-caption {
+  color: #f2e7c9;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 12px 0 0 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 48px;
+  color: var(--gold);
+  font-size: 46px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 2;
+}
+
+.close:hover { color: #fff; }
+
+/* Sidebar */
 .sidebar {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2000;
   top: 0;
   left: 0;
-  background-color: #111;
+  background: #181818;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.18);
 }
 
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 36px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 1.4rem;
+  color: #cfcfcf;
   display: block;
   transition: 0.3s;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
+  color: var(--gold);
 }
 
 .sidebar .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
+  top: 6px;
+  right: 20px;
+  font-size: 2.4rem;
   margin-left: 50px;
 }
 
 .openbtn {
-  font-size: 20px;
+  font-size: 1.3rem;
   cursor: pointer;
-  background-color: #111;
+  background: #111;
   color: white;
-  padding: 10px 15px;
+  padding: 10px 16px;
   border: none;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  transition: background 0.2s;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  background: var(--gold);
+  color: #222;
 }
 
 #main {
   transition: margin-left .5s;
-  padding: 16px;
+  padding: 8px 0 0 0;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-
-
-body {font-family: Arial, Helvetica, sans-serif;}
-
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+.footer {
+  margin-top: 40px;
+  padding: 24px 0;
   text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
+  background: linear-gradient(90deg, #393939 0%, #595959 100%);
+  border-radius: 15px;
+  color: var(--gold);
+  font-size: 1.5rem;
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
 }
 
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
+@media screen and (max-width: 1050px) {
+  .gallery-grid { grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); }
 }
 
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
+@media screen and (max-width: 700px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .header h1 { font-size: 2.4rem; }
+  .footer { font-size: 1.1rem; }
 }
 
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
+@media only screen and (max-width: 500px){
+  .gallery-grid { grid-template-columns: 1fr; }
+  .footer { font-size: 0.98rem; }
 }
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-
-
-#myImg2 {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg2:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image02) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image02 */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-
-
-
-#myImg3 {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#myImg3:hover {opacity: 0.7;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image03) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-/* Caption of Modal Image03 */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
 </style>
 </head>
 <body>
-
 <div class="header">
   <h1>𝓙𝓪𝔃𝓲'𝓼 𝓐𝓻𝓽𝔀𝓸𝓻𝓴𝓼</h1>
   <p>𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓶𝔂 𝓟𝓸𝓻𝓽𝓯𝓸𝓵𝓲𝓸</p>
 </div>
 
-
-
-
+<!-- Sidebar -->
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-   <a href="index.html">Home</a>
+  <a href="index.html">Home</a>
   <a href="Porfolio.html">Portfolio</a>
-  <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVATECH/3.html">ARTIST</a>
-  <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVATECH/3.html">Gallery</a>
-  <a href="file:///C:/Users/jaspe/OneDrive/Desktop/JAVATECH/3.html">Reflection</a>
-  <a href="#"></a>
+  <a href="#">Artist</a>
+  <a href="#">Gallery</a>
+  <a href="#">Reflection</a>
 </div>
-
 <div id="main">
   <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
 </div>
 
-<script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-</script>
-
-
-
+<!-- Art Gallery Grid -->
 <div class="row">
   <div class="leftcolumn">
-    <div class="card">
-<h2>Different Artworks</h2>
+    <div class="card" style="background: none; box-shadow:none; color: #222;">
+      <h2 style="color:var(--gold);text-shadow:1px 2px 6px #333;">Different Artworks</h2>
+      <div class="gallery-grid">
 
-<img id="myImg" src="img%20a/1.jpg" alt="The Starry Night <br> <br> a renowned oil-on-canvas painting by <br> <br> Dutch Post-Impressionist artist Vincent van Gogh, created in June 1889. It depicts a view from the artist's asylum room at Saint-Rémy-de-Provence, just before sunrise, featuring an imaginary village. " style="width:100%;max-width:300px">
-
-<img id="myImg2" src="img%20a/2.jpg" alt="CUBISM <br> <br> An art that has been made by different kind of shape <br> <br> the irrational shape and different mixed of color makes the arts look beautiful and more appealing.  " style="width:100%;max-width:300px">
-
-<img id="myImg3" src="img%20a/3.jpg" alt="Optical Illustion <br> <br> is an illusion caused by the visual system <br> <br> a visual misinterpretation that occurs when the brain interprets information from the eyes that is different from what is actually present, creating a perception that differs from reality. " style="width:100%;max-width:300px">
-
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>
-
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img02">
-  <div id="caption"></div>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg2");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img03">
-  <div id="caption"></div>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg3");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>
-
-
-
-
-    
-    
+        <!-- Artwork #1 -->
+        <div class="art-card">
+          <img src="img%20a/1.jpg" alt="The Starry Night: a renowned oil-on-canvas painting by Vincent van Gogh, created in June 1889. It depicts a view from the artist's asylum room at Saint-Rémy-de-Provence, just before sunrise, featuring an imaginary village." onclick="openModal(0)">
+          <div class="caption">The Starry Night<br><small>Vincent van Gogh, 1889</small></div>
+        </div>
+        <!-- Artwork #2 -->
+        <div class="art-card">
+          <img src="img%20a/2.jpg" alt="CUBISM: Art created using different shapes. The irrational shapes and mixed colors make the art look beautiful and more appealing." onclick="openModal(1)">
+          <div class="caption">Cubism<br><small>Modern Abstract</small></div>
+        </div>
+        <!-- Artwork #3 -->
+        <div class="art-card">
+          <img src="img%20a/3.jpg" alt="Optical Illusion: An illusion caused by the visual system. Visual misinterpretation creates a perception that differs from reality." onclick="openModal(2)">
+          <div class="caption">Optical Illusion<br><small>Visual Art</small></div>
+        </div>
+        <!-- Artwork #4 -->
+        <div class="art-card">
+          <img src="img%20a/4.jpg" alt="Surrealism: Dream-like art combining elements of surprise and unexpected juxtapositions, exploring the subconscious mind." onclick="openModal(3)">
+          <div class="caption">Surrealism<br><small>Exploring the Subconscious</small></div>
+        </div>
+        <!-- Artwork #5 -->
+        <div class="art-card">
+          <img src="img%20a/5.jpg" alt="Minimalism: Simplicity in form, focusing on color and basic shapes to create a sense of clarity and calm." onclick="openModal(4)">
+          <div class="caption">Minimalism<br><small>Clarity & Calm</small></div>
+        </div>
+        <!-- Artwork #6 -->
+        <div class="art-card">
+          <img src="img%20a/6.jpg" alt="Expressionism: Art that expresses emotional experience rather than impressions of the external world." onclick="openModal(5)">
+          <div class="caption">Expressionism<br><small>Emotion in Color</small></div>
+        </div>
+        <!-- Artwork #7 -->
+        <div class="art-card">
+          <img src="img%20a/7.jpg" alt="Pop Art: Bright, bold, and iconic, this style draws from popular culture and mass media." onclick="openModal(6)">
+          <div class="caption">Pop Art<br><small>Vivid & Iconic</small></div>
+        </div>
+        <!-- Artwork #8 -->
+        <div class="art-card">
+          <img src="img%20a/8.jpg" alt="Digital Art: Created using computer technology, blending classic and modern techniques." onclick="openModal(7)">
+          <div class="caption">Digital Art<br><small>Modern Medium</small></div>
+        </div>
+        <!-- Artwork #9 -->
+        <div class="art-card">
+          <img src="img%20a/9.jpg" alt="Watercolor Landscape: Gentle washes of color evoke nature’s serenity." onclick="openModal(8)">
+          <div class="caption">Watercolor Landscape<br><small>Nature's Serenity</small></div>
+        </div>
+      </div>
     </div>
-    
   </div>
+</div>
 
-
-    
-  </div>
+<!-- Modal for All Images -->
+<div id="imgModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div class="modal-caption" id="modalCaption"></div>
 </div>
 
 <div class="footer">
   <h2>𝓑𝓮 𝓒𝓻𝓮𝓪𝓽𝓲𝓿𝓮, 𝓑𝓮 𝓜𝓲𝓷𝓭𝓯𝓾𝓵 𝓪𝓷𝓭 𝓑𝓮 𝓨𝓸𝓾𝓻𝓼𝓮𝓵𝓯</h2>
 </div>
 
+<script>
+/* Sidebar */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+/* Modal Gallery */
+const images = [
+  { src: "img%20a/1.jpg", alt: "The Starry Night: a renowned oil-on-canvas painting by Vincent van Gogh, created in June 1889. It depicts a view from the artist's asylum room at Saint-Rémy-de-Provence, just before sunrise, featuring an imaginary village." },
+  { src: "img%20a/2.jpg", alt: "CUBISM: Art created using different shapes. The irrational shapes and mixed colors make the art look beautiful and more appealing." },
+  { src: "img%20a/3.jpg", alt: "Optical Illusion: An illusion caused by the visual system. Visual misinterpretation creates a perception that differs from reality." },
+  { src: "img%20a/4.jpg", alt: "Surrealism: Dream-like art combining elements of surprise and unexpected juxtapositions, exploring the subconscious mind." },
+  { src: "img%20a/5.jpg", alt: "Minimalism: Simplicity in form, focusing on color and basic shapes to create a sense of clarity and calm." },
+  { src: "img%20a/6.jpg", alt: "Expressionism: Art that expresses emotional experience rather than impressions of the external world." },
+  { src: "img%20a/7.jpg", alt: "Pop Art: Bright, bold, and iconic, this style draws from popular culture and mass media." },
+  { src: "img%20a/8.jpg", alt: "Digital Art: Created using computer technology, blending classic and modern techniques." },
+  { src: "img%20a/9.jpg", alt: "Watercolor Landscape: Gentle washes of color evoke nature’s serenity." }
+];
+
+function openModal(index) {
+  var modal = document.getElementById("imgModal");
+  var modalImg = document.getElementById("modalImg");
+  var caption = document.getElementById("modalCaption");
+  modal.style.display = "block";
+  modalImg.src = images[index].src;
+  caption.innerHTML = images[index].alt;
+}
+
+function closeModal() {
+  document.getElementById("imgModal").style.display = "none";
+}
+
+// Optional: Close modal on ESC key or click outside image
+window.onclick = function(event) {
+  var modal = document.getElementById("imgModal");
+  if (event.target == modal) { closeModal(); }
+};
+window.addEventListener('keydown', function(e) {
+  if (e.key === "Escape") closeModal();
+});
+</script>
 </body>
 </html>
-
-
