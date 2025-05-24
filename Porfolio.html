@@ -150,14 +150,25 @@ body {
   to { opacity: 1;}
 }
 
+/* ------- MODAL IMAGE FIX ------- */
 .modal-content {
-  margin: auto;
+  margin: 24px auto 0 auto;
   display: block;
-  width: 85%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 65vh;
+  object-fit: contain;
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(255,215,0,0.12);
   animation: zoom 0.4s;
+  background: #222;
+}
+/* Make sure modal image scales down on mobile */
+@media (max-width: 700px) {
+  .modal-content {
+    max-width: 95vw;
+    max-height: 48vh;
+  }
 }
 
 @keyframes zoom {
@@ -169,8 +180,9 @@ body {
   color: #f2e7c9;
   font-size: 1.2rem;
   text-align: center;
-  margin: 12px 0 0 0;
+  margin: 18px 0 0 0;
   font-family: 'Montserrat', sans-serif;
+  padding: 0 18px 18px 18px;
 }
 
 .close {
@@ -342,7 +354,7 @@ body {
         <!-- Artwork #8 -->
         <div class="art-card">
           <img src="img%20a/8.jpg" alt="Jungkook: I created this also in pandemic using computer technology but I used this vector art since so many people doing this kind of art during that period." onclick="openModal(7)">
-          <div class="caption">Vector Art<br><small>Modern Medium</small></div>
+          <div class="caption">Vector Art<br><small>Aesthetic</small></div>
         </div>
         <!-- Artwork #9 -->
         <div class="art-card">
