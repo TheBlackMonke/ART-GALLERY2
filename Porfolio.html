@@ -378,15 +378,60 @@ function closeNav() {
 
 /* Modal Gallery */
 const images = [
-  { src: "img%20a/1.jpg", alt: "The Starry Night: a renowned oil-on-canvas painting by Vincent van Gogh, created in June 1889. It depicts a view from the artist's asylum room at Saint-Rémy-de-Provence, just before sunrise, featuring an imaginary village." },
-  { src: "img%20a/2.jpg", alt: "CUBISM: Art created using different shapes. The irrational shapes and mixed colors make the art look beautiful and more appealing." },
-  { src: "img%20a/3.jpg", alt: "Optical Illusion: An illusion caused by the visual system. Visual misinterpretation creates a perception that differs from reality." },
-  { src: "img%20a/4.jpg", alt: "TRIO BROTHER Breaking the Limits to 120 to unlock new potential" },
-  { src: "img%20a/5.jpg", alt: "Ichigo: This art is inspired by the manga the panel says it's over so I recreate this and make a twist about it." },
-  { src: "img%20a/6.jpg", alt: "Itadori Yuji: This Art that expresses emotional experience the concept of this is Sukuna's making fun of Yuji's suffering." },
-  { src: "img%20a/7.jpg", alt: "Jisoo: I created in pandemic using computer technology, blending classic and modern techniques since I have nothing to do in that moment." },
-  { src: "img%20a/8.jpg", alt: "Jungkook: I created this also in pandemic using computer technology but I used this vector art since so many people doing this kind of art during that period." },
-  { src: "img%20a/9.jpg", alt: "PARTNERS: This piece of painting I created this based on what's my favorite pet and my partner's favorite pet I got this idea so I can give it to her." }
+  {
+    src: "img%20a/1.jpg",
+    alt: "The Starry Night: a renowned oil-on-canvas painting by Vincent van Gogh, created in June 1889. It depicts a view from the artist's asylum room at Saint-Rémy-de-Provence, just before sunrise, featuring an imaginary village.",
+    title: "The Starry Night",
+    subtitle: "Vincent van Gogh, 1889"
+  },
+  {
+    src: "img%20a/2.jpg",
+    alt: "CUBISM: Art created using different shapes. The irrational shapes and mixed colors make the art look beautiful and more appealing.",
+    title: "Cubism",
+    subtitle: "Modern Abstract"
+  },
+  {
+    src: "img%20a/3.jpg",
+    alt: "Optical Illusion: An illusion caused by the visual system. Visual misinterpretation creates a perception that differs from reality.",
+    title: "Optical Illusion",
+    subtitle: "Visual Art"
+  },
+  {
+    src: "img%20a/4.jpg",
+    alt: "TRIO BROTHER Breaking the Limits to 120 to unlock new potential",
+    title: "the Trio",
+    subtitle: "Domain Expansion"
+  },
+  {
+    src: "img%20a/5.jpg",
+    alt: "Ichigo: This art is inspired by the manga the panel says it's over so I recreate this and make a twist about it.",
+    title: "Ichigo",
+    subtitle: "I'M COOKED"
+  },
+  {
+    src: "img%20a/6.jpg",
+    alt: "Itadori Yuji: This Art that expresses emotional experience the concept of this is Sukuna's making fun of Yuji's suffering.",
+    title: "ITADORI Yuji",
+    subtitle: "Black Flash"
+  },
+  {
+    src: "img%20a/7.jpg",
+    alt: "Jisoo: I created in pandemic using computer technology, blending classic and modern techniques since I have nothing to do in that moment.",
+    title: "Digital Art",
+    subtitle: "SLAY BEAUTY"
+  },
+  {
+    src: "img%20a/8.jpg",
+    alt: "Jungkook: I created this also in pandemic using computer technology but I used this vector art since so many people doing this kind of art during that period.",
+    title: "Vector Art",
+    subtitle: "Aesthetic"
+  },
+  {
+    src: "img%20a/9.jpg",
+    alt: "PARTNERS: This piece of painting I created this based on what's my favorite pet and my partner's favorite pet I got this idea so I can give it to her.",
+    title: "PAINTING",
+    subtitle: "Peace and Love"
+  }
 ];
 
 function openModal(index) {
@@ -395,7 +440,10 @@ function openModal(index) {
   var caption = document.getElementById("modalCaption");
   modal.style.display = "block";
   modalImg.src = images[index].src;
-  caption.innerHTML = images[index].alt;
+  caption.innerHTML =
+    `<span style="font-weight:bold;font-size:1.3rem">${images[index].title}</span><br>
+     <span style="font-size:1.1rem"><i>${images[index].subtitle}</i></span><br><br>
+     <span style="font-size:1.05rem">${images[index].alt}</span>`;
 }
 
 function closeModal() {
