@@ -228,6 +228,16 @@ footer.w3-dark-grey {
   background: #222!important;
   color: #fff;
   margin-top: 40px;
+  padding-bottom: 0;
+}
+footer .w3-row-padding {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .w3-third {
+  flex: 1 1 220px;
+  margin-bottom: 24px;
 }
 footer .w3-third h3 {
   color: #fff;
@@ -235,6 +245,7 @@ footer .w3-third h3 {
 }
 footer .w3-ul {
   background: transparent;
+  padding-left: 0;
 }
 footer .w3-ul li {
   background: transparent;
@@ -248,32 +259,39 @@ footer a {
   text-decoration: none;
 }
 footer a:hover {
+  color: #ffd700;
   text-decoration: underline;
 }
 footer .w3-third img {
   border-radius: 8px;
 }
-footer .w3-third ul {
-  padding-left: 0;
-}
+footer ul { padding-left: 0; margin: 0; }
+footer .w3-third ul li { margin-bottom: 6px; }
+
 .w3-black.w3-center.w3-padding-24 {
   background: #111!important;
   color: #b2dfdb;
   font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
-@media screen and (max-width: 1050px) {
-  .gallery-grid { grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); }
+/* "Other Artworks" styling */
+.other-artworks {
+  text-align: center;
+  padding: 24px 0 10px 0;
+  background: #181818;
+  color: #ffd700;
+  font-size: 1.1rem;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
 }
-@media screen and (max-width: 700px) {
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
-  .header h1 { font-size: 2.4rem; }
-  .footer { font-size: 1.1rem; }
+.other-artworks a {
+  color: #80cbc4;
+  text-decoration: underline;
+  font-weight: bold;
 }
-@media only screen and (max-width: 500px){
-  .gallery-grid { grid-template-columns: 1fr; }
-  .footer { font-size: 0.98rem; }
-}
+.other-artworks a:hover { color: #ffd700; }
 </style>
 </head>
 <body>
@@ -365,15 +383,17 @@ footer .w3-third ul {
   <div class="w3-row-padding">
     <div class="w3-third">
       <h3>Jazi's Gallery</h3>
-      <p>imagination finds its form and colors speak louder than words.</p>
+      <p>Imagination finds its form and colors speak louder than words.</p>
     </div>
     <div class="w3-third">
       <h3>Contact Us</h3>
       <ul class="w3-ul w3-hoverable">
         <li class="w3-padding-16">
-          <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" class="w3-left w3-margin-right" style="width:60px"> <a href="https://www.facebook.com/profile.php?id=100089027074305&_rdc=1&_rdr">
-          <span class="w3-large">FACEBOOK</span><br>
-        </li> 
+          <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" class="w3-left w3-margin-right" style="width:60px">
+          <a href="https://www.facebook.com/profile.php?id=100089027074305&_rdc=1&_rdr">
+            <span class="w3-large">FACEBOOK</span>
+          </a>
+        </li>
       </ul>
     </div>
     <div class="w3-third">
@@ -389,6 +409,11 @@ footer .w3-third ul {
   </div>
 </footer>
 <div class="w3-black w3-center w3-padding-24">Jazi Gallery</div>
+<div class="other-artworks">
+  <span>Other Artworks Coding: <a href="https://theblackmonke.github.io/heh/" target="_blank">https://theblackmonke.github.io/heh/</a></span>
+  <br>
+  <span>Other Artworks Coding: <a href="https://theblackmonke.github.io/DARK/" target="_blank">https://theblackmonke.github.io/DARK/</a></span>
+</div>
 
 <script>
 /* Overlay Nav Functions */
