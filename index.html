@@ -3,47 +3,34 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
-  font-family: Arial;
+  font-family: Arial, 'Dancing Script', sans-serif;
   padding: 10px;
   background: #f1f1f1;
-background-image: url("")
 }
 
-/* Header/Blog Title */
 .header {
   padding: 60px;
   text-align: center;
-background-image: url("img%20a/bg 1.jpg");
+  background-image: url("img%20a/bg 1.jpg");
 }
-
 .header h1 {
   font-size: 50px;
-color: white;
+  color: white;
 }
 
-/* Style the top navigation bar */
 .topnav {
   overflow: hidden;
   background-color: #333;
 }
-
-/* Style the topnav links */
 .topnav a {
   float: left;
   display: block;
@@ -52,81 +39,22 @@ color: white;
   padding: 14px 16px;
   text-decoration: none;
 }
-
-/* Change color on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 75%;
-background-image: url("")
-}
+.leftcolumn { float: left; width: 75%; }
+.rightcolumn { float: left; width: 25%; background-color: #f1f1f1; padding-left: 20px; }
+.fakeimg { background-color: #aaa; width: 100%; padding: 20px; }
+.card { background-color: white; padding: 20px; margin-top: 20px; }
+.row:after { content: ""; display: table; clear: both; }
 
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
-background-image: url("")
-}
-
-/* Fake image */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Add a card effect for articles */
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-background-image: url("")
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-background-image: url("img%20a/bg 1.jpg");
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
+  .leftcolumn, .rightcolumn { width: 100%; padding: 0; }
 }
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
-  .topnav a {
-    float: none;
-    width: 100%;
-  }
-}
-
-
-
-body {
-  font-family: 'Dancing Script', sans-serif;
+  .topnav a { float: none; width: 100%; }
 }
 
 .overlay {
@@ -136,12 +64,10 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
 }
-
 .overlay-content {
   position: relative;
   top: 25%;
@@ -149,7 +75,6 @@ body {
   text-align: center;
   margin-top: 30px;
 }
-
 .overlay a {
   padding: 8px;
   text-decoration: none;
@@ -158,30 +83,17 @@ body {
   display: block;
   transition: 0.3s;
 }
-
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
+.overlay a:hover, .overlay a:focus { color: #f1f1f1; }
 .overlay .closebtn {
   position: absolute;
   top: 20px;
   right: 45px;
   font-size: 60px;
 }
-
 @media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
-  }
+  .overlay a {font-size: 20px;}
+  .overlay .closebtn {font-size: 40px; top: 15px; right: 35px;}
 }
-
-
-
-
 
 .fa {
   padding: 20px;
@@ -192,29 +104,15 @@ body {
   margin: 5px 2px;
   border-radius: 50%;
 }
-
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-.fa-google {
-  background: #dd4b39;
-  color: white;
-}
-
-
-
+.fa:hover { opacity: 0.7; }
+.fa-facebook { background: #3B5998; color: white; }
+.fa-google { background: #dd4b39; color: white; }
 
 body, html {
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
-S  color: #777;
+  color: #777;
 }
 
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -224,25 +122,10 @@ S  color: #777;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
-.bgimg-1 {
-  background-image: url("img%20a/bg 2.jpg");
-  min-height: 100%;
-}
-
-.bgimg-2 {
-  background-image: url("img%20a/bg 5.jpg");
-  min-height: 400px;
-}
-
-.bgimg-3 {
-  background-image: url("img%20a/bg 4.jpg");
-  min-height: 400px;
-}
-
-
-
+.bgimg-1 { background-image: url("img%20a/bg 2.jpg"); min-height: 100%; }
+.bgimg-2 { background-image: url("img%20a/bg 5.jpg"); min-height: 400px; }
+.bgimg-3 { background-image: url("img%20a/bg 4.jpg"); min-height: 400px; }
 
 .caption {
   position: absolute;
@@ -252,7 +135,6 @@ S  color: #777;
   text-align: center;
   color: #000;
 }
-
 .caption span.border {
   background-color: #111;
   color: #fff;
@@ -268,19 +150,75 @@ h3 {
   color: #111;
 }
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-  }
+/*--- Footer Styling ---*/
+footer.w3-dark-grey {
+  background: #222 !important;
+  color: #fff;
+  margin-top: 40px;
+  padding-bottom: 0;
+}
+footer .w3-row-padding {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .w3-third {
+  flex: 1 1 220px;
+  margin-bottom: 24px;
+}
+footer .w3-third h3 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+footer .w3-ul {
+  background: transparent;
+  padding-left: 0;
+}
+footer .w3-ul li {
+  background: transparent;
+  border: none;
+  color: #fff;
+  list-style: none;
+  margin-bottom: 10px;
+}
+footer a {
+  color: #80cbc4;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+footer .w3-third img {
+  border-radius: 8px;
+}
+footer ul { padding-left: 0; margin: 0; }
+footer .w3-third ul li { margin-bottom: 6px; }
+
+.w3-black.w3-center.w3-padding-24 {
+  background: #111!important;
+  color: #b2dfdb;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
-
-
-
-
-
-
+/* "Other Artworks" styling */
+.other-artworks {
+  text-align: center;
+  padding: 24px 0 10px 0;
+  background: #181818;
+  color: #ffd700;
+  font-size: 1.1rem;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+}
+.other-artworks a {
+  color: #80cbc4;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.other-artworks a:hover { color: #ffd700; }
 </style>
 </head>
 <body>
@@ -290,41 +228,32 @@ h3 {
   <p> </p>
 </div>
 
-
-
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
- <a href="index.html">Home</a>
-  <a href="Porfolio.html">Portfolio</a>
+   <a href="index.html">Home</a>
+   <a href="Porfolio.html">Portfolio</a>
    <a href="Artist.html">Artist</a>
    <a href="gallery.html">Gallery</a>
-    <a href="reflection.html">Reflection</a>
+   <a href="reflection.html">Reflection</a>
   </div>
 </div>
-
-<
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 
 <script>
 function openNav() {
   document.getElementById("myNav").style.width = "100%";
 }
-
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 </script>
 
-
-
-<body>
-
 <div class="bgimg-1">
   <div class="caption">
-  <span class="border">Welcome to Jazi's Gallery
-Where imagination finds its form and colors speak louder than words.
- </span>
+    <span class="border">Welcome to Jazi's Gallery
+      Where imagination finds its form and colors speak louder than words.
+    </span>
   </div>
 </div>
 
@@ -335,83 +264,70 @@ Where imagination finds its form and colors speak louder than words.
 
 <div class="bgimg-2">
   <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">A WARM WELCOME</span>
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">A WARM WELCOME</span>
   </div>
 </div>
 
 <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-  <p> Thank you for visiting. Whether you're here to find inspiration, explore beauty, or simply wander, I invite you to take your time. Look closely. Feel deeply. This space is yours as much as it is mine.</p>
+    <p> Thank you for visiting. Whether you're here to find inspiration, explore beauty, or simply wander, I invite you to take your time. Look closely. Feel deeply. This space is yours as much as it is mine.</p>
   </div>
 </div>
 
 <div class="bgimg-3">
   <div class="caption">
-  <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">KEEP SCROLLING DOWN</span>
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">KEEP SCROLLING DOWN</span>
   </div>
 </div>
 
 <div style="position:relative;">
   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-  <p>Have a wonderful time stay here in an excellent art gallery for a student like us. Everytime you spent staying here hope you're getting an amazing knowledge and appriciation on diffent style of art.</p>
+    <p>Have a wonderful time stay here in an excellent art gallery for a student like us. Everytime you spent staying here hope you're getting an amazing knowledge and appriciation on diffent style of art.</p>
   </div>
 </div>
 
 <div class="bgimg-1">
   <div class="caption">
-  <span class="border">WELCOME AND ENJOY THE JOURNEY!</span>
+    <span class="border">WELCOME AND ENJOY THE JOURNEY!</span>
   </div>
 </div>
 
-
-</body>
-
-
-
-      
-    </div>
-    
-  </div>
-
-
-  </div>
-</div>
-
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-dark-grey">
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-dark-grey">
   <div class="w3-row-padding">
     <div class="w3-third">
       <h3>Jazi's Gallery</h3>
-      <p>imagination finds its form and colors speak louder than words.</p>
+      <p>Imagination finds its form and colors speak louder than words.</p>
     </div>
-  
     <div class="w3-third">
       <h3>Contact Us</h3>
       <ul class="w3-ul w3-hoverable">
-
         <li class="w3-padding-16">
-          <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" class="w3-left w3-margin-right" style="width:60px"> <a href="https://www.facebook.com/profile.php?id=100089027074305&_rdc=1&_rdr">
-          <span class="w3-large">FACEBOOK</span><br>
-
-        </li> 
+          <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" class="w3-left w3-margin-right" style="width:60px">
+          <a href="https://www.facebook.com/profile.php?id=100089027074305&_rdc=1&_rdr">
+            <span class="w3-large">FACEBOOK</span>
+          </a>
+        </li>
       </ul>
     </div>
-
     <div class="w3-third">
       <h3>QUICK LINKS</h3>
-      <p>
-   <li>  <a href="index.html">Home</a> </li>
-    <li> <a href="Porfolio.html">Portfolio</a> </li>
-   <li> <a href="Artist.html">Artist</a> </li>
-   <li> <a href="gallery.html">Gallery</a> </li>
-    <li> <a href="reflection.html">Reflection</a> </li>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Porfolio.html">Portfolio</a></li>
+        <li><a href="Artist.html">Artist</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reflection.html">Reflection</a></li>
+      </ul>
     </div>
-
   </div>
-  </footer>
-  <div class="w3-black w3-center w3-padding-24">Jazi Gallery</a></div>
-
+</footer>
+<div class="w3-black w3-center w3-padding-24">
+  Jazi Gallery
+</div>
+<div class="other-artworks">
+  <span>Other Artworks Coding: <a href="https://theblackmonke.github.io/heh/" target="_blank">https://theblackmonke.github.io/heh/</a></span> <br>
+  <span>Other Artworks Coding: <a href="https://theblackmonke.github.io/DARK/" target="_blank">https://theblackmonke.github.io/DARK/</a></span> 
+</div>
 </body>
 </html>
-
-
