@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>𝓙𝓪𝔃𝓲'𝓼 𝓐𝓻𝓽𝔀𝓸𝓻𝓴𝓼</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+/* Navigation overlay styles */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #f2f2f2;
+  display: block;
+  transition: 0.3s;
+}
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+  background: #009688;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+@media screen and (max-width: 400px) {
+  .overlay a {font-size: 24px;}
+  .overlay .closebtn {font-size: 40px; right: 20px;}
+}
+
+/* Footer customization */
+footer.w3-dark-grey {
+  background: #222!important;
+  color: #fff;
+  margin-top: 40px;
+}
+footer .w3-third h3 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+footer .w3-ul {
+  background: transparent;
+}
+footer .w3-ul li {
+  background: transparent;
+  border: none;
+  color: #fff;
+  list-style: none;
+  margin-bottom: 10px;
+}
+footer a {
+  color: #80cbc4;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer .w3-third img {
+  border-radius: 8px;
+}
+footer .w3-third ul {
+  padding-left: 0;
+}
+.w3-black.w3-center.w3-padding-24 {
+  background: #111!important;
+  color: #b2dfdb;
+  font-weight: bold;
+}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Navigation Overlay -->
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="index.html">Home</a>
+    <a href="Portfolio.html">Portfolio</a>
+    <a href="artist.html">Artist</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reflection.html">Reflection</a>
+  </div>
+</div>
+
+<!-- Navigation open button -->
+<span style="font-size:30px;cursor:pointer;position:fixed;top:20px;left:30px;z-index:1100;color:#009688" onclick="openNav()">&#9776; Menu</span>
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="/w3images/avatar_hat.jpg" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+            <h2>JASPER SARMIENTO</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Student</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Tondo Manila, Philippines</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>jpsarmiento2024@plm.edu.ph</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>09270136625</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <p>Analyzation</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+          </div>
+          <p>Gaming</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+              <div class="w3-center w3-text-white">80%</div>
+            </div>
+          </div>
+          <p>Illustrator</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+          </div>
+          <p>Coding</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+          </div>
+          <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+          <p>Filino</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+          </div>
+          <p>English</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+          </div>
+          <p>Spanish</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
+          </div>
+          <br>
+        </div>
+      </div><br>
+    </div>
+    <!-- End Left Column -->
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>About the Artist</h2>
+        <div class="w3-container">
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>July 2006 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+          <p>ℌ𝔦, ℑ’𝔪 𝔍𝔞𝔰𝔭𝔢𝔯 𝔖𝔞𝔯𝔪𝔦𝔢𝔫𝔱𝔬, 𝔞𝔫 18-𝔶𝔢𝔞𝔯-𝔬𝔩𝔡 𝔰𝔱𝔲𝔡𝔢𝔫𝔱 𝔞𝔫𝔡 𝔞𝔰𝔭𝔦𝔯𝔦𝔫𝔤 𝔞𝔯𝔱𝔦𝔰𝔱. ℑ’𝔳𝔢 𝔟𝔢𝔢𝔫 𝔡𝔯𝔞𝔴𝔦𝔫𝔤 𝔞𝔫𝔡 𝔠𝔯𝔢𝔞𝔱𝔦𝔫𝔤 𝔰𝔦𝔫𝔠𝔢 ℑ 𝔴𝔞𝔰 𝔞 𝔨𝔦𝔡, 𝔟𝔲𝔱 ℑ 𝔰𝔱𝔞𝔯𝔱𝔢𝔡 𝔱𝔞𝔨𝔦𝔫𝔤 𝔞𝔯𝔱 𝔪𝔬𝔯𝔢 𝔰𝔢𝔯𝔦𝔬𝔲𝔰𝔩𝔶 𝔦𝔫 𝔱𝔥𝔢 𝔭𝔞𝔰𝔱 𝔣𝔢𝔴 𝔶𝔢𝔞𝔯𝔰. 𝔄𝔯𝔱 𝔥𝔞𝔰 𝔞𝔩𝔴𝔞𝔶𝔰 𝔟𝔢𝔢𝔫 𝔪𝔶 𝔴𝔞𝔶 𝔬𝔣 𝔢𝔵𝔭𝔯𝔢𝔰𝔰𝔦𝔫𝔤 𝔣𝔢𝔢𝔩𝔦𝔫𝔤𝔰 ℑ 𝔠𝔞𝔫’𝔱 𝔭𝔲𝔱 𝔦𝔫𝔱𝔬 𝔴𝔬𝔯𝔡𝔰. 𝔚𝔥𝔢𝔱𝔥𝔢𝔯 𝔦𝔱'𝔰 𝔱𝔥𝔯𝔬𝔲𝔤𝔥 𝔭𝔞𝔦𝔫𝔱𝔦𝔫𝔤, 𝔰𝔨𝔢𝔱𝔠𝔥𝔦𝔫𝔤, 𝔬𝔯 𝔡𝔦𝔤𝔦𝔱𝔞𝔩 𝔞𝔯𝔱, 𝔠𝔯𝔢𝔞𝔱𝔦𝔫𝔤 𝔥𝔢𝔩𝔭𝔰 𝔪𝔢 𝔣𝔢𝔢𝔩 𝔪𝔬𝔯𝔢 𝔠𝔬𝔫𝔫𝔢𝔠𝔱𝔢𝔡 𝔱𝔬 𝔪𝔶𝔰𝔢𝔩𝔣 𝔞𝔫𝔡 𝔱𝔥𝔢 𝔴𝔬𝔯𝔩𝔡 𝔞𝔯𝔬𝔲𝔫𝔡 𝔪𝔢. <br>
+          ℜ𝔦𝔤𝔥𝔱 𝔫𝔬𝔴, ℑ’𝔪 𝔰𝔱𝔦𝔩𝔩 𝔡𝔦𝔰𝔠𝔬𝔳𝔢𝔯𝔦𝔫𝔤 𝔪𝔶 𝔰𝔱𝔶𝔩𝔢 𝔞𝔫𝔡 𝔢𝔵𝔭𝔢𝔯𝔦𝔪𝔢𝔫𝔱𝔦𝔫𝔤 𝔴𝔦𝔱𝔥 𝔡𝔦𝔣𝔣𝔢𝔯𝔢𝔫𝔱 𝔪𝔢𝔡𝔦𝔲𝔪𝔰. ℑ 𝔩𝔬𝔳𝔢 𝔴𝔬𝔯𝔨𝔦𝔫𝔤 𝔴𝔦𝔱𝔥 𝔭𝔢𝔫𝔠𝔦𝔩 𝔞𝔫𝔡 𝔡𝔦𝔤𝔦𝔱𝔞𝔩 𝔱𝔬𝔬𝔩𝔰, 𝔟𝔲𝔱 ℑ’𝔪 𝔞𝔩𝔰𝔬 𝔢𝔵𝔭𝔩𝔬𝔯𝔦𝔫𝔤 𝔴𝔞𝔱𝔢𝔯𝔠𝔬𝔩𝔬𝔯 𝔞𝔫𝔡 𝔞𝔠𝔯𝔶𝔩𝔦𝔠 𝔭𝔞𝔦𝔫𝔱𝔦𝔫𝔤. ℑ 𝔢𝔫𝔧𝔬𝔶 𝔱𝔢𝔩𝔩𝔦𝔫𝔤 𝔰𝔱𝔬𝔯𝔦𝔢𝔰 𝔱𝔥𝔯𝔬𝔲𝔤𝔥 𝔪𝔶 𝔞𝔯𝔱, 𝔴𝔥𝔢𝔱𝔥𝔢𝔯 𝔦𝔱'𝔰 𝔱𝔥𝔯𝔬𝔲𝔤𝔥 𝔠𝔥𝔞𝔯𝔞𝔠𝔱𝔢𝔯𝔰, 𝔢𝔪𝔬𝔱𝔦𝔬𝔫𝔰, 𝔬𝔯 𝔞𝔟𝔰𝔱𝔯𝔞𝔠𝔱 𝔰𝔥𝔞𝔭𝔢𝔰.</p>
+          <hr>
+        </div>
+      </div>
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Artist Statement</h2>
+        <div class="w3-container">
+          <p>𝓐𝓼 𝓪 𝔂𝓸𝓾𝓷𝓰 𝓪𝓻𝓽𝓲𝓼𝓽, 𝓘 𝓬𝓻𝓮𝓪𝓽𝓮 𝓽𝓸 𝓾𝓷𝓭𝓮𝓻𝓼𝓽𝓪𝓷𝓭 𝓶𝔂𝓼𝓮𝓵𝓯 𝓪𝓷𝓭 𝓽𝓱𝓮 𝔀𝓸𝓻𝓵𝓭 𝓫𝓮𝓽𝓽𝓮𝓻. 𝓐 𝓵𝓸𝓽 𝓸𝓯 𝓶𝔂 𝓪𝓻𝓽 𝓲𝓼 𝓲𝓷𝓼𝓹𝓲𝓻𝓮𝓭 𝓫𝔂 𝓮𝓶𝓸𝓽𝓲𝓸𝓷𝓼  𝓮𝓼𝓹𝓮𝓬𝓲𝓪𝓵𝓵𝔂 𝓽𝓱𝓮 𝓸𝓷𝓮𝓼 𝓽𝓱𝓪𝓽 𝓪𝓻𝓮 𝓱𝓪𝓻𝓭 𝓽𝓸 𝓮𝔁𝓹𝓵𝓪𝓲𝓷. 𝓢𝓸𝓶𝓮𝓽𝓲𝓶𝓮𝓼 𝓘 𝓭𝓻𝓪𝔀 𝔀𝓱𝓪𝓽 𝓘 𝓯𝓮𝓮𝓵, 𝓮𝓿𝓮𝓷 𝓲𝓯 𝓲𝓽 𝓭𝓸𝓮𝓼𝓷’𝓽 𝓶𝓪𝓴𝓮 𝓼𝓮𝓷𝓼𝓮 𝓽𝓸 𝓪𝓷𝔂𝓸𝓷𝓮 𝓮𝓵𝓼𝓮. 𝓞𝓽𝓱𝓮𝓻 𝓽𝓲𝓶𝓮𝓼, 𝓘’𝓶 𝓲𝓷𝓼𝓹𝓲𝓻𝓮𝓭 𝓫𝔂 𝓶𝓾𝓼𝓲𝓬, 𝓷𝓪𝓽𝓾𝓻𝓮, 𝓭𝓻𝓮𝓪𝓶𝓼, 𝓸𝓻 𝓶𝓸𝓶𝓮𝓷𝓽𝓼 𝓯𝓻𝓸𝓶 𝓮𝓿𝓮𝓻𝔂𝓭𝓪𝔂 𝓵𝓲𝓯𝓮. <br>
+          𝓘 𝓭𝓸𝓷’𝓽 𝓽𝓱𝓲𝓷𝓴 𝓪𝓻𝓽 𝓱𝓪𝓼 𝓽𝓸 𝓫𝓮 𝓹𝓮𝓻𝓯𝓮𝓬𝓽 𝓸𝓻 𝓻𝓮𝓪𝓵𝓲𝓼𝓽𝓲𝓬. 𝓣𝓸 𝓶𝓮, 𝓲𝓽’𝓼 𝓪𝓫𝓸𝓾𝓽 𝓱𝓸𝓷𝓮𝓼𝓽𝔂 𝓪𝓷𝓭 𝓬𝓸𝓷𝓷𝓮𝓬𝓽𝓲𝓸𝓷. 𝓘 𝔀𝓪𝓷𝓽 𝓶𝔂 𝔀𝓸𝓻𝓴 𝓽𝓸 𝓶𝓪𝓴𝓮 𝓹𝓮𝓸𝓹𝓵𝓮 𝓯𝓮𝓮𝓵 𝓼𝓸𝓶𝓮𝓽𝓱𝓲𝓷𝓰 𝔀𝓱𝓮𝓽𝓱𝓮𝓻 𝓲𝓽’𝓼 𝓬𝓪𝓵𝓶, 𝓬𝓾𝓻𝓲𝓸𝓼𝓲𝓽𝔂, 𝓸𝓻 𝓮𝓿𝓮𝓷 𝓳𝓾𝓼𝓽 𝓪 𝓹𝓪𝓾𝓼𝓮 𝓽𝓸 𝓽𝓱𝓲𝓷𝓴.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Artist Journey</b></h5>
+          <p>𝑀𝓎 𝒿𝑜𝓊𝓇𝓃𝑒𝓎 𝒶𝓈 𝒶𝓃 𝒶𝓇𝓉𝒾𝓈𝓉 𝓈𝓉𝒶𝓇𝓉𝑒𝒹 𝓌𝒽𝑒𝓃 𝐼 𝓌𝒶𝓈 𝓎𝑜𝓊𝓃𝑔, 𝒹𝑜𝑜𝒹𝓁𝒾𝓃𝑔 𝑜𝓃 𝓃𝑜𝓉𝑒𝒷𝑜𝑜𝓀𝓈 𝒶𝓃𝒹 𝒸𝑜𝓅𝓎𝒾𝓃𝑔 𝒸𝒶𝓇𝓉𝑜𝑜𝓃𝓈 𝐼 𝓌𝒶𝓉𝒸𝒽𝑒𝒹 𝑜𝓃 𝒯𝒱. ...</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Influences</b></h5>
+          <p>𝓜𝓾𝓼𝓲𝓬 – 𝓘 𝓸𝓯𝓽𝓮𝓷 𝓵𝓲𝓼𝓽𝓮𝓷 𝓽𝓸 𝓶𝓾𝓼𝓲𝓬 ...</p><br>
+        </div>
+      </div>
+    </div>
+    <!-- End Right Column -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Page Container -->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-dark-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>Jazi's Gallery</h3>
+      <p>Imagination finds its form and colors speak louder than words.</p>
+    </div>
+    <div class="w3-third">
+      <h3>Contact Us</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" class="w3-left w3-margin-right" style="width:40px;border-radius:50%"> 
+          <a href="https://www.facebook.com/profile.php?id=100089027074305&_rdc=1&_rdr" target="_blank">
+            <span class="w3-large">FACEBOOK</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li> <a href="index.html">Home</a> </li>
+    <li> <a href="Porfolio.html">Portfolio</a> </li>
+   <li> <a href="Artist.html">Artist</a> </li>
+   <li> <a href="gallery.html">Gallery</a> </li>
+    <li> <a href="reflection.html">Reflection</a> </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<div class="w3-black w3-center w3-padding-24">Jazi Gallery</div>
+
+</body>
+</html>
