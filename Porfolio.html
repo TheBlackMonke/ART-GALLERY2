@@ -138,6 +138,7 @@ body {
 .art-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  z-index: 2;
 }
 .art-card img {
   border-radius: 16px;
@@ -183,19 +184,42 @@ body {
 .modal-content {
   margin: 24px auto 0 auto;
   display: block;
-  width: 100%;
-  max-width: 700px;
-  max-height: 65vh;
+  width: 90vw;
+  max-width: 875px;
+  max-height: 80vh;
   object-fit: contain;
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(255,215,0,0.12);
   animation: zoom 0.4s;
   background: #222;
 }
+
+.modal-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 875px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.modal-arrow {
+  color: var(--gold);
+  font-size: 2.8rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 14px;
+  transition: color 0.2s;
+}
+.modal-arrow:hover {
+  color: #fff;
+}
 @media (max-width: 700px) {
   .modal-content {
-    max-width: 95vw;
-    max-height: 48vh;
+    max-width: 97vw;
+    max-height: 50vh;
+  }
+  .modal-controls {
+    max-width: 97vw;
   }
 }
 @keyframes zoom {
@@ -319,7 +343,7 @@ footer .w3-third ul li { margin-bottom: 6px; }
   <div class="leftcolumn">
     <div class="card" style="background: none; box-shadow:none; color: #222;">
       <h2 style="color:var(--gold);text-shadow:1px 2px 6px #333;">Different Artworks</h2>
-      <div class="gallery-grid">
+      <div class="gallery-grid" id="galleryGrid">
 
         <!-- Artwork #1 -->
         <div class="art-card">
@@ -339,7 +363,7 @@ footer .w3-third ul li { margin-bottom: 6px; }
         <!-- Artwork #4 -->
         <div class="art-card">
           <img src="img%20a/4.jpg" alt="TRIO BROTHER Breaking the Limits to 120 to unlock new potential" onclick="openModal(3)">
-          <div class="caption">the Trio<br><small>Domain Expansion</small></div>
+          <div class="caption">The Trio<br><small>Domain Expansion</small></div>
         </div>
         <!-- Artwork #5 -->
         <div class="art-card">
@@ -374,7 +398,11 @@ footer .w3-third ul li { margin-bottom: 6px; }
 <!-- Modal for All Images -->
 <div id="imgModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg">
+  <div class="modal-controls">
+    <span id="prevArrow" class="modal-arrow" onclick="changeModal(-1)">&laquo;</span>
+    <img class="modal-content" id="modalImg">
+    <span id="nextArrow" class="modal-arrow" onclick="changeModal(1)">&raquo;</span>
+  </div>
   <div class="modal-caption" id="modalCaption"></div>
 </div>
 
@@ -424,7 +452,7 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 
-/* Modal Gallery */
+/* Modal Gallery with Arrows */
 const images = [
   {
     src: "img%20a/1.jpg",
@@ -447,7 +475,7 @@ const images = [
   {
     src: "img%20a/4.jpg",
     alt: "TRIO BROTHER Breaking the Limits to 120 to unlock new potential",
-    title: "the Trio",
+    title: "The Trio",
     subtitle: "Domain Expansion"
   },
   {
@@ -482,11 +510,17 @@ const images = [
   }
 ];
 
+let currentModalIndex = 0;
+
 function openModal(index) {
-  var modal = document.getElementById("imgModal");
+  currentModalIndex = index;
+  showModalImage(index);
+  document.getElementById("imgModal").style.display = "block";
+}
+
+function showModalImage(index) {
   var modalImg = document.getElementById("modalImg");
   var caption = document.getElementById("modalCaption");
-  modal.style.display = "block";
   modalImg.src = images[index].src;
   caption.innerHTML =
     `<span style="font-weight:bold;font-size:1.3rem">${images[index].title}</span><br>
@@ -498,6 +532,13 @@ function closeModal() {
   document.getElementById("imgModal").style.display = "none";
 }
 
+function changeModal(direction) {
+  currentModalIndex += direction;
+  if (currentModalIndex < 0) currentModalIndex = images.length - 1;
+  if (currentModalIndex >= images.length) currentModalIndex = 0;
+  showModalImage(currentModalIndex);
+}
+
 // Optional: Close modal on ESC key or click outside image
 window.onclick = function(event) {
   var modal = document.getElementById("imgModal");
@@ -505,6 +546,10 @@ window.onclick = function(event) {
 };
 window.addEventListener('keydown', function(e) {
   if (e.key === "Escape") closeModal();
+  if (document.getElementById("imgModal").style.display === "block") {
+    if (e.key === "ArrowLeft") changeModal(-1);
+    if (e.key === "ArrowRight") changeModal(1);
+  }
 });
 </script>
 </body>
