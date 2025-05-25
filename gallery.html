@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>𝓙𝓪𝔃𝓲'𝓼 𝓖𝓪𝓵𝓵𝓮𝓻𝔂 𝓔𝔁𝓱𝓲𝓫𝓲𝓽</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Lato:300,400,700|Montserrat:400,700|Raleway:400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+:root {
+  --gold: #FFD700;
+  --dark: #1b1b1b;
+  --accent: #edbb99;
+  --card-bg: rgba(30,30,30,0.85);
+  --modal-bg: rgba(0,0,0,0.92);
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  background: #f1f1f1 url("img%20a/bg 2.jpg") no-repeat center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  padding: 10px;
+  color: #222;
+}
+/* Overlay Navigation */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.95);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #f2f2f2;
+  display: block;
+  transition: 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+}
+.overlay a:hover, .overlay a:focus {
+  color: var(--gold);
+  background: #333;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+@media screen and (max-width: 400px) {
+  .overlay a {font-size: 24px;}
+  .overlay .closebtn {font-size: 40px; right: 20px;}
+}
+/* Open button style */
+.openbtn-nav {
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--gold);
+  background: none;
+  border: none;
+  position: fixed;
+  top: 24px;
+  left: 28px;
+  z-index: 1100;
+  transition: color 0.2s;
+}
+.openbtn-nav:hover {
+  color: #fff;
+}
+/* Header */
+.header {
+  padding: 36px 0 20px 0;
+  text-align: center;
+  background: linear-gradient(90deg, var(--gold), #fffbe6 40%, #fff9e6 60%, var(--gold));
+  border-radius: 15px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.11);
+  margin-bottom: 30px;
+}
+.header h1 {
+  font-size: 3.2rem;
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 2px;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+.header p {
+  font-size: 1.4rem;
+  color: #444;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+/* Responsive Gallery Grid */
+.responsive-gallery {
+  max-width: 1300px;
+  margin: 36px auto 0 auto;
+  padding: 24px 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 28px;
+  justify-items: center;
+}
+.responsive-image-wrapper {
+  width: 100%;
+  max-width: 340px;
+  background: rgba(255,255,255,0.89);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(90,80,180,0.10), 0 1.5px 4px rgba(100,80,80,0.04);
+  overflow: hidden;
+  transition: transform 0.19s, box-shadow 0.19s;
+  border: 2.5px solid #e0e0e0;
+  position: relative;
+  cursor: pointer;
+}
+.responsive-image-wrapper:hover {
+  transform: translateY(-7px) scale(1.027);
+  box-shadow: 0 16px 44px rgba(90,80,180,0.16), 0 2px 12px rgba(100,80,80,0.05);
+  border-color: #5a4edc;
+}
+.responsive-image-wrapper img {
+  width: 100%;
+  display: block;
+  height: 230px;
+  object-fit: cover;
+  background: #e8e7f3;
+  transition: opacity 0.22s;
+}
+.responsive-image-wrapper:hover img {
+  opacity: 0.94;
+}
+.responsive-image-caption {
+  padding: 12px 18px 12px 18px;
+  font-size: 1.08rem;
+  color: #4d396e;
+  font-family: 'Lato', sans-serif;
+  background: none;
+  text-align: center;
+}
+.responsive-image-caption small {
+  color: #a181e9;
+  display: block;
+  margin-top: 2px;
+  font-size: 0.98rem;
+}
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: var(--modal-bg);
+  animation: fadeIn 0.25s;
+}
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+.modal-content {
+  margin: 24px auto 0 auto;
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(255,215,0,0.12);
+  animation: zoom 0.4s;
+  background: #222;
+}
+@media (max-width: 700px) {
+  .modal-content {
+    max-width: 97vw;
+    max-height: 50vh;
+  }
+}
+@keyframes zoom {
+  from {transform:scale(0.7);}
+  to {transform:scale(1);}
+}
+.modal-caption {
+  color: #f2e7c9;
+  font-size: 1.18rem;
+  text-align: center;
+  margin: 18px 0 0 0;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 18px 18px 18px;
+}
+.close {
+  position: absolute;
+  top: 24px;
+  right: 48px;
+  color: var(--gold);
+  font-size: 46px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 2;
+}
+.close:hover { color: #fff; }
+/* Footer */
+footer.w3-dark-grey {
+  background: #222!important;
+  color: #fff;
+  margin-top: 40px;
+  padding-bottom: 0;
+}
+footer .w3-row-padding {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .w3-third {
+  flex: 1 1 220px;
+  margin-bottom: 24px;
+}
+footer .w3-third h3 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+footer .w3-ul {
+  background: transparent;
+  padding-left: 0;
+}
+footer .w3-ul li {
+  background: transparent;
+  border: none;
+  color: #fff;
+  list-style: none;
+  margin-bottom: 10px;
+}
+footer a {
+  color: #80cbc4;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+footer .w3-third img {
+  border-radius: 8px;
+}
+footer ul { padding-left: 0; margin: 0; }
+footer .w3-third ul li { margin-bottom: 6px; }
+.w3-black.w3-center.w3-padding-24 {
+  background: #111!important;
+  color: #b2dfdb;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+/* "Other Artworks" styling */
+.other-artworks {
+  text-align: center;
+  padding: 24px 0 10px 0;
+  background: #181818;
+  color: #ffd700;
+  font-size: 1.1rem;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+}
+.other-artworks a {
+  color: #80cbc4;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.other-artworks a:hover { color: #ffd700; }
+@media (max-width: 700px) {
+  .header h1 { font-size: 2rem; }
+  .responsive-image-wrapper img { height: 140px; }
+  .footer { font-size: 1rem; border-radius: 18px 18px 0 0; }
+}
+</style>
+</head>
+<body>
+<!-- Overlay Navigation -->
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="index.html">Home</a>
+    <a href="Porfolio.html">Portfolio</a>
+    <a href="Artist.html">Artist</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reflection.html">Reflection</a>
+  </div>
+</div>
+<button class="openbtn-nav" onclick="openNav()">&#9776;</button>
+<div class="header">
+  <h1>𝓙𝓪𝔃𝓲'𝓼 𝓖𝓪𝓵𝓵𝓮𝓻𝔂 𝓔𝔁𝓱𝓲𝓫𝓲𝓽</h1>
+  <p>𝓔𝔁𝓹𝓵𝓸𝓻𝓮 𝓭𝓲𝓯𝓯𝓮𝓻𝓮𝓷𝓽 𝓰𝓪𝓵𝓵𝓮𝓻𝔂 𝓶𝓾𝓼𝓮𝓾𝓶
+</p>
+</div>
+<!-- Responsive Gallery Section with Modal -->
+<div class="responsive-gallery">
+  <!-- Image 1 -->
+  <div class="responsive-image-wrapper" onclick="openModal(0)">
+    <img src="img%20a/1.jpg" alt=" ">
+    <div class="responsive-image-caption">
+      The Starry Night<br><small>Vincent van Gogh, 1889</small>
+    </div>
+  </div>
+  <!-- Image 2 -->
+  <div class="responsive-image-wrapper" onclick="openModal(1)">
+    <img src="img%20a/2.jpg" alt=" ">
+    <div class="responsive-image-caption">
+      Cubism<br><small>Modern Abstract</small>
+    </div>
+  </div>
+  <!-- Image 3 -->
+  <div class="responsive-image-wrapper" onclick="openModal(2)">
+    <img src="img%20a/3.jpg" alt=" ">
+    <div class="responsive-image-caption">
+      Optical Illusion<br><small>Visual Art</small>
+    </div>
+  </div>
+  <!-- Image 4 -->
+  <div class="responsive-image-wrapper" onclick="openModal(3)">
+    <img src="img%20a/4.jpg" alt=" ">
+    <div class="responsive-image-caption">
+      The Trio<br><small>Domain Expansion</small>
+    </div>
+  </div>
+  <!-- Image 5 -->
+  <div class="responsive-image-wrapper" onclick="openModal(4)">
+    <img src="img%20a/5.jpg" alt=" ">
+    <div class="responsive-image-caption">
+      Ichigo<br><small>I'M COOKED</small>
+    </div>
+  </div>
+  <!-- Image 6 -->
+  <div class="responsive-image-wrapper" onclick="openModal(5)">
+    <img src="img%20a/6.jpg" alt=" ">
+    <div class="responsive-image-caption">
+      ITADORI Yuji<br><small>Black Flash</small>
+    </div>
+  </div>
+  <!-- Image 7 -->
+  <div class="responsive-image-wrapper" onclick="openModal(6)">
+    <img src="img%20a/7.jpg" alt=" ">
+    <div class="responsive-image-caption">
+      Digital Art<br><small>SLAY BEAUTY</small>
+    </div>
+  </div>
+  <!-- Image 8 -->
+  <div class="responsive-image-wrapper" onclick="openModal(7)">
+    <img src="img%20a/8.jpg" alt=" ">
+    <div class="responsive-image-caption">
+      Vector Art<br><small>Aesthetic</small>
+    </div>
+  </div>
+  <!-- Image 9 -->
+  <div class="responsive-image-wrapper" onclick="openModal(8)">
+    <img src="img%20a/9.jpg" alt=" ">
+    <div class="responsive-image-caption">
+      PAINTING<br><small>Peace and Love</small>
+    </div>
+  </div>
+</div>
+<!-- Modal for All Images -->
+<div id="imgModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div class="modal-caption" id="modalCaption"></div>
+</div>
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-dark-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>Jazi's Gallery</h3>
+      <p>Imagination finds its form and colors speak louder than words.</p>
+    </div>
+    <div class="w3-third">
+      <h3>Contact Us</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" class="w3-left w3-margin-right" style="width:60px">
+          <a href="https://www.facebook.com/profile.php?id=100089027074305&_rdc=1&_rdr">
+            <span class="w3-large">FACEBOOK</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Porfolio.html">Portfolio</a></li>
+        <li><a href="Artist.html">Artist</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reflection.html">Reflection</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<div class="w3-black w3-center w3-padding-24">Jazi Gallery</div>
+<div class="other-artworks">
+  <span>Other Artworks Coding: <a href="https://theblackmonke.github.io/heh/" target="_blank">https://theblackmonke.github.io/heh/</a></span>
+  <br>
+  <span>Other Artworks Coding: <a href="https://theblackmonke.github.io/DARK/" target="_blank">https://theblackmonke.github.io/DARK/</a></span>
+</div>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+const images = [
+  {
+    src: "img%20a/1.jpg",
+    alt: "The Starry Night: a renowned oil-on-canvas painting by Vincent van Gogh, created in June 1889. It depicts a view from the artist's asylum room at Saint-Rémy-de-Provence, just before sunrise, featuring an imaginary village.",
+    title: "The Starry Night",
+    subtitle: "Vincent van Gogh, 1889"
+  },
+  {
+    src: "img%20a/2.jpg",
+    alt: "CUBISM: Art created using different shapes. The irrational shapes and mixed colors make the art look beautiful and more appealing.",
+    title: "Cubism",
+    subtitle: "Modern Abstract"
+  },
+  {
+    src: "img%20a/3.jpg",
+    alt: "Optical Illusion: An illusion caused by the visual system. Visual misinterpretation creates a perception that differs from reality.",
+    title: "Optical Illusion",
+    subtitle: "Visual Art"
+  },
+  {
+    src: "img%20a/4.jpg",
+    alt: "TRIO BROTHER Breaking the Limits to 120 to unlock new potential",
+    title: "The Trio",
+    subtitle: "Domain Expansion"
+  },
+  {
+    src: "img%20a/5.jpg",
+    alt: "Ichigo: This art is inspired by the manga the panel says it's over so I recreate this and make a twist about it.",
+    title: "Ichigo",
+    subtitle: "I'M COOKED"
+  },
+  {
+    src: "img%20a/6.jpg",
+    alt: "Itadori Yuji: This Art that expresses emotional experience the concept of this is Sukuna's making fun of Yuji's suffering.",
+    title: "ITADORI Yuji",
+    subtitle: "Black Flash"
+  },
+  {
+    src: "img%20a/7.jpg",
+    alt: "Jisoo: I created in pandemic using computer technology, blending classic and modern techniques since I have nothing to do in that moment.",
+    title: "Digital Art",
+    subtitle: "SLAY BEAUTY"
+  },
+  {
+    src: "img%20a/8.jpg",
+    alt: "Jungkook: I created this also in pandemic using computer technology but I used this vector art since so many people doing this kind of art during that period.",
+    title: "Vector Art",
+    subtitle: "Aesthetic"
+  },
+  {
+    src: "img%20a/9.jpg",
+    alt: "PARTNERS: This piece of painting I created this based on what's my favorite pet and my partner's favorite pet I got this idea so I can give it to her.",
+    title: "PAINTING",
+    subtitle: "Peace and Love"
+  }
+];
+function openModal(index) {
+  var modal = document.getElementById("imgModal");
+  var modalImg = document.getElementById("modalImg");
+  var caption = document.getElementById("modalCaption");
+  modal.style.display = "block";
+  modalImg.src = images[index].src;
+  caption.innerHTML =
+    `<span style="font-weight:bold;font-size:1.3rem">${images[index].title}</span><br>
+     <span style="font-size:1.1rem"><i>${images[index].subtitle}</i></span><br><br>
+     <span style="font-size:1.05rem">${images[index].alt}</span>`;
+}
+function closeModal() {
+  document.getElementById("imgModal").style.display = "none";
+}
+window.onclick = function(event) {
+  var modal = document.getElementById("imgModal");
+  if (event.target == modal) { closeModal(); }
+};
+window.addEventListener('keydown', function(e) {
+  if (e.key === "Escape") closeModal();
+});
+</script>
+</body>
+</html>
