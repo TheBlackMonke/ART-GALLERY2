@@ -12,8 +12,9 @@
   --gold: #FFD700;
   --dark: #1b1b1b;
   --accent: #edbb99;
-  --card-bg: rgba(30,30,30,0.85);
+  --card-bg: rgba(255,255,255,0.88);
   --modal-bg: rgba(0,0,0,0.92);
+  --shadow: 0 4px 24px rgba(0,0,0,0.12);
 }
 * { box-sizing: border-box; }
 body {
@@ -90,7 +91,7 @@ body {
   text-align: center;
   background: linear-gradient(90deg, var(--gold), #fffbe6 40%, #fff9e6 60%, var(--gold));
   border-radius: 15px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.11);
+  box-shadow: var(--shadow);
   margin-bottom: 30px;
 }
 .header h1 {
@@ -106,51 +107,76 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-style: italic;
 }
-/* Responsive Gallery Grid */
+
+/* Gallery Section */
+.gallery-title {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 18px;
+  margin-top: 0;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px #fffbe6cc;
+}
+
 .responsive-gallery {
-  max-width: 1300px;
-  margin: 36px auto 0 auto;
-  padding: 24px 12px;
+  max-width: 1200px;
+  margin: 36px auto 30px auto;
+  padding: 18px 8px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+  gap: 32px;
   justify-items: center;
 }
+
+/* Card Style for Friendly User Experience */
 .responsive-image-wrapper {
   width: 100%;
-  max-width: 340px;
-  background: rgba(255,255,255,0.89);
+  max-width: 320px;
+  background: var(--card-bg);
   border-radius: 18px;
   box-shadow: 0 6px 24px rgba(90,80,180,0.10), 0 1.5px 4px rgba(100,80,80,0.04);
+  border: 2.5px solid #fffbe6;
   overflow: hidden;
-  transition: transform 0.19s, box-shadow 0.19s;
-  border: 2.5px solid #e0e0e0;
+  transition: transform 0.19s, box-shadow 0.19s, border-color 0.22s;
   position: relative;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .responsive-image-wrapper:hover {
-  transform: translateY(-7px) scale(1.027);
-  box-shadow: 0 16px 44px rgba(90,80,180,0.16), 0 2px 12px rgba(100,80,80,0.05);
-  border-color: #5a4edc;
+  transform: translateY(-7px) scale(1.035);
+  box-shadow: 0 16px 44px var(--gold), 0 2px 12px rgba(100,80,80,0.05);
+  border-color: var(--gold);
+  background: #fffbe6;
 }
+
 .responsive-image-wrapper img {
   width: 100%;
   display: block;
-  height: 230px;
+  height: 220px;
   object-fit: cover;
   background: #e8e7f3;
-  transition: opacity 0.22s;
+  transition: opacity 0.22s, box-shadow 0.22s;
+  border-radius: 11px;
+  box-shadow: 0 3px 18px #ffd70033;
 }
+
 .responsive-image-wrapper:hover img {
-  opacity: 0.94;
+  opacity: 0.96;
+  box-shadow: 0 8px 30px #ffd70099;
 }
+
 .responsive-image-caption {
-  padding: 12px 18px 12px 18px;
-  font-size: 1.08rem;
+  padding: 14px 16px 14px 16px;
+  font-size: 1.05rem;
   color: #4d396e;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: none;
   text-align: center;
+  min-height: 36px;
 }
 .responsive-image-caption small {
   color: #a181e9;
@@ -158,12 +184,29 @@ body {
   margin-top: 2px;
   font-size: 0.98rem;
 }
+
+.responsive-image-wrapper .zoom-icon {
+  position: absolute;
+  top: 9px;
+  right: 12px;
+  font-size: 1.7rem;
+  color: var(--gold);
+  opacity: 0.8;
+  pointer-events: none;
+  text-shadow: 0 2px 7px #fffbe6;
+  transition: transform 0.16s;
+}
+.responsive-image-wrapper:hover .zoom-icon {
+  transform: scale(1.22);
+  opacity: 1;
+}
+
 /* Modal Styles */
 .modal {
   display: none;
   position: fixed;
   z-index: 9999;
-  padding-top: 80px;
+  padding: 0;
   left: 0;
   top: 0;
   width: 100vw;
@@ -176,8 +219,16 @@ body {
   from { opacity: 0;}
   to { opacity: 1;}
 }
+.modal-dialog-centered {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vw;
+}
 .modal-content {
-  margin: 24px auto 0 auto;
+  background: #222;
+  margin: 0 auto;
   display: block;
   width: 100%;
   max-width: 800px;
@@ -186,12 +237,22 @@ body {
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(255,215,0,0.12);
   animation: zoom 0.4s;
-  background: #222;
+  transition: max-width 0.2s, max-height 0.2s;
+}
+@media (max-width: 1024px) {
+  .modal-content { max-width: 95vw; }
 }
 @media (max-width: 700px) {
   .modal-content {
-    max-width: 97vw;
-    max-height: 50vh;
+    max-width: 99vw;
+    max-height: 44vh;
+  }
+  .modal-dialog-centered { padding: 8vw 3vw; }
+}
+@media (max-width: 430px) {
+  .modal-content {
+    max-width: 99vw;
+    max-height: 34vh;
   }
 }
 @keyframes zoom {
@@ -200,11 +261,12 @@ body {
 }
 .modal-caption {
   color: #f2e7c9;
-  font-size: 1.18rem;
+  font-size: 1.12rem;
   text-align: center;
   margin: 18px 0 0 0;
   font-family: 'Montserrat', sans-serif;
-  padding: 0 18px 18px 18px;
+  padding: 0 5vw 18px 5vw;
+  word-break: break-word;
 }
 .close {
   position: absolute;
@@ -216,8 +278,15 @@ body {
   cursor: pointer;
   transition: color 0.2s;
   z-index: 2;
+  background: rgba(34,34,34,0.2);
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.close:hover { color: #fff; }
+.close:hover { color: #fff; background: #ffd70033; }
 /* Footer */
 footer.w3-dark-grey {
   background: #222!important;
@@ -307,55 +376,63 @@ footer .w3-third ul li { margin-bottom: 6px; }
 <button class="openbtn-nav" onclick="openNav()">&#9776;</button>
 <div class="header">
   <h1>𝓙𝓪𝔃𝓲'𝓼 𝓖𝓪𝓵𝓵𝓮𝓻𝔂 𝓔𝔁𝓱𝓲𝓫𝓲𝓽</h1>
-  <p>𝓔𝔁𝓹𝓵𝓸𝓻𝓮 𝓭𝓲𝓯𝓯𝓮𝓻𝓮𝓷𝓽 𝓰𝓪𝓵𝓵𝓮𝓻𝔂 𝓶𝓾𝓼𝓮𝓾𝓶
-</p>
+  <p>𝓔𝔁𝓹𝓵𝓸𝓻𝓮 𝓭𝓲𝓯𝓯𝓮𝓻𝓮𝓷𝓽 𝓰𝓪𝓵𝓵𝓮𝓻𝔂 𝓶𝓾𝓼𝓮𝓾𝓶</p>
 </div>
+<h2 class="gallery-title"><i class="fa fa-picture-o"></i> Friendly Gallery Space</h2>
 <!-- Responsive Gallery Section with Modal -->
 <div class="responsive-gallery">
-  <!-- Image 1 -->
   <div class="responsive-image-wrapper" onclick="openModal(0)">
-    <img src="img%20a/art1.jpg" alt=" ">
-
+    <span class="zoom-icon"><i class="fa fa-search-plus"></i></span>
+    <img src="img%20a/art1.jpg" alt="Artwork 1">
+    <div class="responsive-image-caption">Artwork #1</div>
   </div>
-  <!-- Image 2 -->
   <div class="responsive-image-wrapper" onclick="openModal(1)">
-    <img src="img%20a/art2.jpg" alt=" ">
-
+    <span class="zoom-icon"><i class="fa fa-search-plus"></i></span>
+    <img src="img%20a/art2.jpg" alt="Artwork 2">
+    <div class="responsive-image-caption">Artwork #2</div>
   </div>
-  <!-- Image 3 -->
   <div class="responsive-image-wrapper" onclick="openModal(2)">
-    <img src="img%20a/art3.jpg" alt=" ">
-
+    <span class="zoom-icon"><i class="fa fa-search-plus"></i></span>
+    <img src="img%20a/art3.jpg" alt="Artwork 3">
+    <div class="responsive-image-caption">Artwork #3</div>
   </div>
-  <!-- Image 4 -->
   <div class="responsive-image-wrapper" onclick="openModal(3)">
-    <img src="img%20a/art4.jpg" alt=" ">
+    <span class="zoom-icon"><i class="fa fa-search-plus"></i></span>
+    <img src="img%20a/art4.jpg" alt="Artwork 4">
+    <div class="responsive-image-caption">Artwork #4</div>
   </div>
-  <!-- Image 5 -->
   <div class="responsive-image-wrapper" onclick="openModal(4)">
-    <img src="img%20a/art5.jpg" alt=" ">
+    <span class="zoom-icon"><i class="fa fa-search-plus"></i></span>
+    <img src="img%20a/art5.jpg" alt="Artwork 5">
+    <div class="responsive-image-caption">Artwork #5</div>
   </div>
-  <!-- Image 6 -->
   <div class="responsive-image-wrapper" onclick="openModal(5)">
-    <img src="img%20a/art6.jpg" alt=" ">
+    <span class="zoom-icon"><i class="fa fa-search-plus"></i></span>
+    <img src="img%20a/art6.jpg" alt="Artwork 6">
+    <div class="responsive-image-caption">Artwork #6</div>
   </div>
-  <!-- Image 7 -->
   <div class="responsive-image-wrapper" onclick="openModal(6)">
-    <img src="img%20a/art7.jpg" alt=" ">
+    <span class="zoom-icon"><i class="fa fa-search-plus"></i></span>
+    <img src="img%20a/art7.jpg" alt="Artwork 7">
+    <div class="responsive-image-caption">Artwork #7</div>
   </div>
-  <!-- Image 8 -->
   <div class="responsive-image-wrapper" onclick="openModal(7)">
-    <img src="img%20a/art8.jpg" alt=" ">
+    <span class="zoom-icon"><i class="fa fa-search-plus"></i></span>
+    <img src="img%20a/art8.jpg" alt="Artwork 8">
+    <div class="responsive-image-caption">Artwork #8</div>
   </div>
-  <!-- Image 9 -->
   <div class="responsive-image-wrapper" onclick="openModal(8)">
-    <img src="img%20a/art9.jpg" alt=" ">
+    <span class="zoom-icon"><i class="fa fa-search-plus"></i></span>
+    <img src="img%20a/art9.jpg" alt="Artwork 9">
+    <div class="responsive-image-caption">Artwork #9</div>
   </div>
 </div>
 <!-- Modal for All Images -->
-<div id="imgModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg">
+<div id="imgModal" class="modal" tabindex="-1">
+  <span class="close" onclick="closeModal()" aria-label="Close" title="Close">&times;</span>
+  <div class="modal-dialog-centered">
+    <img class="modal-content" id="modalImg" alt="">
+  </div>
   <div class="modal-caption" id="modalCaption"></div>
 </div>
 <!-- Footer -->
@@ -402,59 +479,45 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
 const images = [
-  {
-    src: "img%20a/art1.jpg",
-  },
-  {
-    src: "img%20a/art2.jpg",
-  },
-  {
-    src: "img%20a/art3.jpg",
-  },
-  {
-    src: "img%20a/art4.jpg",
-  },
-  {
-    src: "img%20a/art5.jpg",
-
-  },
-  {
-    src: "img%20a/art6.jpg",
-   
-  },
-  {
-    src: "img%20a/art7.jpg",
-  
-  },
-  {
-    src: "img%20a/art8.jpg",
-   
-  },
-  {
-    src: "img%20a/art9.jpg",
-  
-  }
+  { src: "img%20a/art1.jpg", label: "Artwork #1" },
+  { src: "img%20a/art2.jpg", label: "Artwork #2" },
+  { src: "img%20a/art3.jpg", label: "Artwork #3" },
+  { src: "img%20a/art4.jpg", label: "Artwork #4" },
+  { src: "img%20a/art5.jpg", label: "Artwork #5" },
+  { src: "img%20a/art6.jpg", label: "Artwork #6" },
+  { src: "img%20a/art7.jpg", label: "Artwork #7" },
+  { src: "img%20a/art8.jpg", label: "Artwork #8" },
+  { src: "img%20a/art9.jpg", label: "Artwork #9" }
 ];
 function openModal(index) {
   var modal = document.getElementById("imgModal");
   var modalImg = document.getElementById("modalImg");
   var caption = document.getElementById("modalCaption");
   modal.style.display = "block";
+  modal.setAttribute('aria-modal', 'true');
+  document.body.style.overflow = "hidden";
+  setTimeout(function() { modal.focus(); }, 10);
   modalImg.src = images[index].src;
-  caption.innerHTML =
-    `<span style="font-weight:bold;font-size:1.3rem">${images[index].title}</span><br>
-     <span style="font-size:1.1rem"><i>${images[index].subtitle}</i></span><br><br>
-     <span style="font-size:1.05rem">${images[index].alt}</span>`;
+  modalImg.alt = images[index].label;
+  caption.innerHTML = `<span style="font-weight:bold;font-size:1.15rem">${images[index].label}</span>`;
 }
 function closeModal() {
-  document.getElementById("imgModal").style.display = "none";
+  var modal = document.getElementById("imgModal");
+  modal.style.display = "none";
+  document.body.style.overflow = "";
 }
 window.onclick = function(event) {
   var modal = document.getElementById("imgModal");
   if (event.target == modal) { closeModal(); }
 };
 window.addEventListener('keydown', function(e) {
-  if (e.key === "Escape") closeModal();
+  var modal = document.getElementById("imgModal");
+  if (modal.style.display === "block") {
+    if (e.key === "Escape") closeModal();
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      // Optional: left/right navigation (future enhancement)
+    }
+  }
 });
 </script>
 </body>
